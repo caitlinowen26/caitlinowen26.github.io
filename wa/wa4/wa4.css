@@ -16,12 +16,47 @@ body {
   .card footer
   .card header
   .card
+  h2
+  p
   
   /* Rulesets to be matched up with selectors */
   
+  h2, p{
+    margin: 0em;
+  }
+
+  article{
+    height: 12em;
+    background-color: rgba(0, 0, 0, 0.4);
+  }
+
+  header, footer{
+    height: 4em;
+    padding: 5em;
+  }
+
+  h2{
+    font-size: 20px;
+    line-height: 2em;
+  }
+
+  footer p{
+    font-size: 15px;
+    line-height: 2.5em;
+  }
+
+  article p{
+    padding: 5em;
+    color: lightgrey;
+  }
+
+  img{
+    height: 4em;
+  }
+
   .card{
-    width: 35em;
-    height: 22em;
+    width: 35em; 
+    height: 22em; 
     margin: 5em auto;
     background-color: red;
     border: 0.2em solid black;
@@ -39,7 +74,23 @@ body {
   }
   
   .card article img{
-    max-height: 750%;
+    max-height: 100%;
     float: right;
     background-color: rgba(0, 0, 0, 0.5);
+  }
+
+  .personal_card{
+    width: 35em;
+    height: 22em;
+    margin: 5em auto;
+    background-color: hotpink;
+    border: 0.2em solid black;
+    border-radius: 1.5em;
+    font-family: 'Courier New', Courier, monospace;
+  }
+
+  .personal_card header{
+    background-color: linear-gradient(to bottom, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0));
+    border-radius: 1.5em, 1.5em, 0, 0;
+    color: white;
   }
