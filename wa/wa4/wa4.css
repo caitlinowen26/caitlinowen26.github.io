@@ -1,85 +1,86 @@
-/* General styles - put these straight into your stylesheet */
-
-body {
+body 
+{
     margin: 0;
-  }
+}
   
-  html {
+html 
+{
     font-family: 'Helvetica neue', Arial, 'sans serif';
     font-size: 10px;
     background-color: #ccc;
-  }
+}
   
-  /* Selectors to be matched up with rulesets */
-  
-  .card article img
-  .card footer
-  .card header
-  .card
-  h2
-  p
-  
-  /* Rulesets to be matched up with selectors */
-  
-  h2, p{
-    margin: 0em;
-  }
-
-  article{
-    height: 12em;
-    background-color: rgba(0, 0, 0, 0.4);
-  }
-
-  header, footer{
-    height: 4em;
-    padding: 5em;
-  }
-
-  h2{
-    font-size: 20px;
-    line-height: 2em;
-  }
-
-  footer p{
-    font-size: 15px;
-    line-height: 2.5em;
-  }
-
-  article p{
-    padding: 5em;
-    color: lightgrey;
-  }
-
-  img{
-    height: 4em;
-  }
-
-  .card{
+/* Styles specific to the card container */
+.card
+{
     width: 35em; 
     height: 22em; 
     margin: 5em auto;
     background-color: red;
     border: 0.2em solid black;
     border-radius: 1.5em;
-  }
-  
-  .card header{
+}
+
+/* Styles specific to the header and footer */
+.card header
+{
     background-image: linear-gradient(to bottom,rgba(0,0,0,0.1), rgba(0,0,0,0));
     border-radius: 1.5em 1.5em 0 0;
-  }
+}
   
-  .card footer{
+.card footer
+{
     background-image: linear-gradient(to bottom,rgba(0,0,0,0), rgba(0,0,0,0.1));
     border-radius: 0 0 1.5em 1.5em;
-  }
+}
+
+header, footer
+{
+    height: 5em;
+    padding: 1em;
+}
+
+h2, p
+{
+    margin: 0;
+}
+
+h2
+{
+    font-size: 2em;
+    line-height: 1.5em;
+}
+
+footer p
+{
+    font-size: 1.5em;
+    line-height: 2em;
+}
   
-  .card article img{
+/*styles specific to the main business card contents*/
+.card article img
+{
     max-height: 100%;
     float: right;
-    background-color: rgba(0, 0, 0, 0.5);
-  }
+    width: auto; /*shrink pic*/
+}
 
-  .personal_card{
+article
+{
+    height: 12em;
+    background-color: rgba(0, 0, 0, 0.4);
+    overflow: hidden; /*prevent image overflow*/
+}
+
+article p
+{
+    padding-left: 5em;
+    color: lightgrey;
+}
+
+/*personal card styles*/
+.personal_card
+{
     width: 35em;
     height: 22em;
     margin: 5em auto;
@@ -87,10 +88,39 @@ body {
     border: 0.2em solid black;
     border-radius: 1.5em;
     font-family: 'Courier New', Courier, monospace;
-  }
+}
 
-  .personal_card header{
-    background-color: linear-gradient(to bottom, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0));
-    border-radius: 1.5em, 1.5em, 0, 0;
+.personal_card header
+{
+    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0));
+    border-radius: 1.5em 1.5em 0 0;
     color: white;
-  }
+}
+
+.personal_card footer
+{
+    background-image: linear-gradient(to bottom,rgba(0,0,0,0), rgba(0,0,0,0.1));
+    border-radius: 0 0 1.5em 1.5em;
+}
+
+.personal_card footer p 
+{
+    font-size: 1.2em; /*smaller font size*/
+    line-height: 1.5em; /*adjusted line height*/
+    padding: 0.5em; /*added padding*/
+    text-align: center; /*center the text*/
+}
+
+.personal_card article img 
+{
+    max-height: 100%;
+    float: right;
+    width: auto; /*shrink image*/
+}
+
+.personal_card article 
+{
+    height: 12em;
+    background-color: rgba(0, 0, 0, 0.4);
+    overflow: hidden; /*prevent image overflow*/
+}
