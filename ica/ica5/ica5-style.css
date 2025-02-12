@@ -1,0 +1,77 @@
+ * {
+    box-sizing: border-box;
+  }
+  
+  html {
+    font-family: sans-serif;
+  }
+  
+  body {
+    margin: 0;
+    background: #ccc; /* This will be overridden by the .letter background */
+  }
+  
+  article {
+    width: 210mm;
+    height: 297mm;
+    margin: 20px auto;
+    position: relative;
+  }
+  
+  address {
+    position: absolute;
+    bottom: 8mm;
+    right: 20mm;
+    font-size: 14px; /* Adjust font size for better fit */
+  }
+  
+  h1 {
+    position: absolute;
+    top: 12mm;
+    left: 20mm;
+    width: 128px;
+    height: 128px;
+    font-size: 20px;
+    letter-spacing: 1px;
+    text-align: center;
+    padding: 44px 0;
+    color: white;
+    text-shadow: 1px 1px 1px black;
+    /* Logo styling additions */
+    background-image: url("logo.png"); 
+    background-repeat: no-repeat;
+    background-size: contain; 
+    text-indent: -9999px; /* Hide the text */
+    overflow: hidden; /* Hide any overflowing text */
+    filter: drop-shadow(3px 3px 2px rgba(0, 0, 0, 0.5)); 
+  }
+  
+  /* Your CSS below here */
+  
+  /* Letterhead background styles */
+  article { /* Applying styles to the letter container */
+    background-image:
+      linear-gradient(to bottom, rgba(0,0,0,0.1) 0%, rgba(0,0,0,0) 20%, rgba(0,0,0,0) 80%, rgba(0,0,0,0.1) 100%),
+      url("top-image.png"), 
+      url("bottom-image.png"); 
+    background-position:
+      center top, /* Gradient position */
+      top left, /* Top image position */
+      bottom left; /* Bottom image position */
+    background-repeat:
+      no-repeat,
+      no-repeat,
+      no-repeat;
+    background-attachment:
+      scroll,
+      fixed,
+      fixed;
+    background-size:
+      auto, /* Gradient size */
+      100% auto, /* Top image size */
+      100% auto; /* Bottom image size */
+    background-color: white;
+    border-top: 1mm solid #a71930; /* Example color, adjust to match */
+    border-bottom: 1mm solid #a71930; /* Example color, adjust to match */
+    padding: 20px; /* Add some padding for content */
+  }  
