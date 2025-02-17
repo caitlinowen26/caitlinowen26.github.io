@@ -2,16 +2,16 @@
 html, body {
     height: 100%;
     margin: 0;
-    overflow: hidden; /* Prevent scrollbars */
+    overflow: hidden;
 }
 
 .image-container {
-    position: fixed; /* Use fixed positioning */
+    position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    z-index: 1; /* Ensure the image is behind the overlay */
+    z-index: 1;
 }
 
 .image-container img {
@@ -21,15 +21,29 @@ html, body {
 }
 
 .overlay {
-    position: fixed; /* Use fixed positioning */
-    bottom: 20px; /* Adjust as needed */
-    right: 20px; /* Adjust as needed */
-    z-index: 2; /* Ensure the overlay is on top */
+    position: fixed;
+    z-index: 2;
+}
+
+.bottom-right {
+    bottom: 20px;
+    right: 20px;
+}
+
+.top-left {
+    top: 20px;
+    left: 20px;
 }
 
 .score-overlay {
-    width: 200px; /* Adjust as needed */
+    width: 200px;
     height: auto;
-    border: 1px solid white; /* Optional: for better visibility */
-    display: block; /* Ensure proper rendering */
+    border: 1px solid white;
+    display: block;
+}
+
+.logo-overlay {
+    width: 150px; /* Adjust as needed */
+    height: auto;
+    display: block;
 }
