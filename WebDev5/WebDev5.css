@@ -136,7 +136,7 @@ input[type="radio"] {
 	border-radius: 4px;
 	overflow: hidden;
 	z-index: 2;
-	background: linear-gradient(45deg, purple 0%, purple 100%);
+	/*background: linear-gradient(45deg, purple 0%, purple 100%);*/
 	box-shadow: 0 4px 12px grey;
 	animation: gentlePageTurn 8s ease-in-out infinite;
 }
