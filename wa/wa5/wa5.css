@@ -1,0 +1,35 @@
+/* style.css */
+html, body {
+    height: 100%;
+    margin: 0;
+    overflow: hidden; /* Prevent scrollbars */
+}
+
+.image-container {
+    position: fixed; /* Use fixed positioning */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1; /* Ensure the image is behind the overlay */
+}
+
+.image-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.overlay {
+    position: fixed; /* Use fixed positioning */
+    bottom: 20px; /* Adjust as needed */
+    right: 20px; /* Adjust as needed */
+    z-index: 2; /* Ensure the overlay is on top */
+}
+
+.score-overlay {
+    width: 200px; /* Adjust as needed */
+    height: auto;
+    border: 1px solid white; /* Optional: for better visibility */
+    display: block; /* Ensure proper rendering */
+}
