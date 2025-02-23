@@ -1,0 +1,106 @@
+body {
+  background-color: #fff;
+  color: #333;
+  margin: 0;
+  font: 1.2em / 1.2 Arial, Helvetica, sans-serif;
+  width: auto;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+    float: left; /*makes the text wrap around the photo in the middle*/ 
+    margin: 2vw;
+}
+
+.logo {
+  font-size: 200%;
+  padding: 50px 20px;
+  margin: 0 auto;
+  max-width: 980px;
+}
+
+.grid {
+  display: grid;
+  margin: 10 50% auto; /*was 0*/
+  padding: 2 20px;/*was 0 20px*/
+  max-width: auto; /*was 980px*/
+  grid-template-columns: 1fr 1fr; /*two column layout*/
+  grid-template-rows: 1fr 1fr 1fr;
+  gap: 20px; /* Add gap between grid items */
+}
+
+nav {
+  background-color: #000;
+  padding: .5em;
+  position: sticky; /*makes the nav bar scroll with the content and then become stuck at the top of the viewpoint when it reaches it*/
+  top: 0;
+}
+
+nav ul {
+  display: flex; /* Use flexbox for navigation items */
+  justify-content: space-around; /* Distribute space evenly between items */
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+nav a {
+  color: #fff;
+  text-decoration: none;
+  padding: .5em 1em;
+}
+
+.photos {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /*two column layout using repeat*/
+  gap: 1px; /* Add a 1px gap between images */
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.photos li {
+  margin: 0; /* Remove default list item margins */
+}
+
+.feature {
+    width: 200px;
+}
+
+/* Media query for screens larger than 500px */
+@media (min-width: 501px) {
+.grid {
+  grid-template-columns: 1fr 1fr; /* Two-column layout */
+}
+
+.photos {
+  grid-template-columns: repeat(2, 1fr); /* Two-column photo grid */
+}
+}
+
+/* Media query for screens smaller than 500px */
+@media (max-width: 500px) {
+.grid {
+  display: flex;
+  flex-direction: column; /* Vertical flexbox layout */
+}
+
+.photos {
+  display: flex;
+  flex-direction: column; /* Vertical flexbox for photos */
+}
+
+.photos li {
+  margin-bottom: 10px; /* Add spacing between photos */
+}
+
+nav ul {
+  flex-direction: column; /* Stack navigation items vertically */
+  align-items: center; /* Center navigation items horizontally */
+}
+
+nav li {
+  margin-bottom: 0.5em; /* Add spacing between navigation items */
+}
+}
