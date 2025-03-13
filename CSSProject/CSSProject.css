@@ -11,7 +11,7 @@ header {
     background-color: #222;
     padding: 20px;
     text-align: center;
-    border-bottom: 2px solid #444;
+    border-bottom: 2px solid goldenrod; /*#444*/
 }
 
 h1 {
@@ -37,7 +37,7 @@ h2 {
     margin-bottom: 30px;
     padding: 20px;
     background-color: #111;
-    border-left: 5px solid #666;
+    border-left: 5px solid goldenrod; /*#666*/
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
 }
 
@@ -59,7 +59,7 @@ h2 {
 }
 
 hr {
-    border-color: #333;
+    border-color: goldenrod; /*#333*/
     margin: 20px 0;
 }
 
@@ -67,7 +67,7 @@ footer {
     text-align: center;
     padding: 15px;
     background-color: #222;
-    border-top: 2px solid #444;
+    border-top: 2px solid goldenrod; /*#444*/
     font-size: 0.9em;
-    color: #888;
+    color: goldenrod; /*#888*/
 }
