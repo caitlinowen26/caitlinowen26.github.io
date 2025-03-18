@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box{
+            background-color: olive;
+            border: 5px solid red;
+            height: 200px;
+            width: 200px;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1> class="name">Hello!</h1>
+    <button>Click me</button>
+    <div class="box"></div>
+    <script>
+        let box = document.querySelector('.box');
+        box.addEventListener('click', changeColor);
+        function changeColor()
+        {
+            //consol.log('test');
+            box.style = "background-color: pink; border: 20px dotted purple";
+        }
+        //<script src="week10.js">
+        console.log('Hello World!');
+        //alert('This is an alert');
+        let btn = document.querySelector('button'); //let is changable 
+        //var btn //basically let
+        //const btn //can't be changed
+        btn.addEventListener('click', updateName); //wait for a click, then run updateName
+        function updateName() //function declaration
+        {
+            //consol.log('Test');
+            let name = document.querySelector('.name');
+            const input = prompt('Enter a new name!');
+            name.textContent = input;
+        }
+    </script>
+    </div>
+</body>
+</html>

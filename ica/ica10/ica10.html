@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh; /* Make sure it covers the whole screen */
+            margin: 0; /* Remove default body margins */
+        }
+
+        .box{
+            background-color: olive;
+            border: 5px solid red;
+            height: 200px;
+            width: 200px;
+            border-radius: 50%; /* This makes it a circle */
+            cursor: pointer; /* Add a pointer cursor for better UX */
+        }
+    </style>
+</head>
+<body>
+    <h1 class="name">Hello!</h1>
+    <!-- Removed the button -->
+    <div class="box"></div>
+    <script>
+        let box = document.querySelector('.box');
+        box.addEventListener('click', changeBoxSize);
+
+        function getRandomIntInclusive(min, max) 
+        {
+            min = Math.ceil(min);
+            max = Math.floor(max);
+            return Math.floor(Math.random() * (max - min + 1) + min); // The maximum is inclusive and the minimum is inclusive
+        }
+
+        function changeBoxSize() 
+        {
+            let randomInt = getRandomIntInclusive(50, 200); // Increased min to 50 to avoid very small circles
+            box.style.height = randomInt + "px";
+            box.style.width = randomInt + "px";
+            changeColor(); // Call changeColor to also change the color
+        }
+
+        function changeColor() 
+        {
+            const randomColor = `rgb(${getRandomIntInclusive(0, 255)}, ${getRandomIntInclusive(0, 255)}, ${getRandomIntInclusive(0, 255)})`;
+            box.style.backgroundColor = randomColor;
+            box.style.border = `5px solid ${randomColor}`; // Also change the border color
+
+            // Check if the background color is red (or close to red)
+            if (isRed(randomColor)) 
+            {
+                updateName(); // Call updateName to prompt for a new name
+            }
+        }
+
+        // Helper function to determine if a color is "red"
+        function isRed(color) 
+        {
+            // Convert rgb color to individual r, g, b values
+            const rgbValues = color.substring(4, color.length - 1).split(",");
+            const red = parseInt(rgbValues[0]);
+            const green = parseInt(rgbValues[1]);
+            const blue = parseInt(rgbValues[2]);
+
+            // Define a threshold for what we consider "red"
+            const redThreshold = 200;
+            const otherThreshold = 100;
+
+            // Check if red is high and green/blue are low
+            return red > redThreshold && green < otherThreshold && blue < otherThreshold;
+        }
+
+        console.log('Hello World!');
+
+        //let btn = document.querySelector('button'); //let is changable
+
+        //btn.addEventListener('click', updateName); //wait for a click, then run updateName
+        function updateName() //function declaration
+        {
+            let name = document.querySelector('.name');
+            const input = prompt('Enter a new name!');
+            name.textContent = input;
+        }
+    </script>
+    </div>
+</body>
+</html>
