@@ -1,0 +1,83 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    width: 400px; /* Slightly wider */
+    margin: 20px auto; /* Center the content */
+    background: linear-gradient(to bottom, #e0eafc, #6dabe4); /* Gradient background */
+    color: #333;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Adds a subtle shadow */
+  }
+  
+  label {
+    font-weight: 600; /* Semi-bold label */
+    color: #2962ff; /* A vibrant blue */
+    display: block; /* Ensures each label is on a new line */
+    margin-bottom: 5px;
+  }
+  
+  div {
+    padding-bottom: 15px;
+  }
+  
+  input[type="text"] {
+    padding: 10px;
+    width: 100%; /* Full width input */
+    border: 2px solid #a3b18a; /* A subtle green border */
+    border-radius: 5px;
+    margin-top: 5px;
+    box-sizing: border-box; /* Ensures padding doesn't affect width */
+  }
+  
+  input[type="text"]:focus {
+    border-color: #436b47; /* Darker green on focus */
+    outline: none; /* Removes the default focus outline */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Adds a subtle shadow on focus */
+  }
+  
+  input[type="radio"] {
+    margin-right: 5px;
+  }
+  
+  label[for="us"],
+  label[for="uk"] {
+    display: inline-block; /* Allows labels to be on the same line as radio buttons */
+    font-weight: normal; /* Remove bold from radio labels */
+    color: #555;
+    margin-left: 5px;
+  }
+  
+  .randomize {
+    background-color: #2962ff; /* A vibrant blue */
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s ease; /* Smooth transition for hover effect */
+  }
+  
+  .randomize:hover {
+    background-color: #0d47a1; /* Darker blue on hover */
+  }
+  
+  .randomize:focus {
+    outline: none; /* Removes the default focus outline */
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.3); /* Enhance shadow on focus */
+  }
+  
+  p.story {
+    background: #f9f7f0; /* A light beige */
+    color: #4a4a4a;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin-top: 20px;
+    visibility: hidden;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Adds a subtle shadow */
+    font-style: italic; /* Italicize the story text */
+    line-height: 1.6; /* Improves readability */
+  }
+
