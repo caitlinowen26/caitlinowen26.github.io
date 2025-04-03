@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>In-Class Activity #11 - ica11.html</title>
+    <style>
+        body {
+            background-color: #fff;
+            color: #000;
+            font-family: Arial, sans-serif;
+        }
+
+        .msgBox {
+            width: 242px;
+            border: 5px solid gray;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: #eee;
+            border-radius: 10px;
+            padding: 15px;
+        }
+
+        .msgBox p {
+            font-style: italic;
+            color: #555;
+            padding-left: 82px;
+            background-position: 25px center;
+            background-repeat: no-repeat;
+        }
+
+        .msgBox button {
+            background-color: gray;
+            color: white;
+            border: none;
+            padding: 8px 12px;
+            border-radius: 5px;
+            cursor: pointer;
+            float: right;
+        }
+    </style>
+</head>
+<body>
+    <button>Click me to display message</button>
+
+    <script>
+        const btn = document.querySelector("button");
+
+        function displayMessage(msgText, msgType) {
+            const body = document.body;
+
+            const panel = document.createElement("div");
+            panel.setAttribute("class", "msgBox");
+            body.appendChild(panel);
+
+            const msg = document.createElement("p");
+            msg.textContent = msgText;
+            panel.appendChild(msg);
+
+            const closeBtn = document.createElement("button");
+            closeBtn.textContent = "x";
+            panel.appendChild(closeBtn);
+
+            closeBtn.addEventListener("click", () =>
+                panel.parentNode.removeChild(panel)
+            );
+
+            if (msgType === "warning") {
+                msg.style.backgroundImage = "url(icons/warning.png)";
+                panel.style.backgroundColor = "red";
+            } else if (msgType === "chat") {
+                msg.style.backgroundImage = "url(icons/chat.png)";
+                panel.style.backgroundColor = "aqua";
+            } else {
+                msg.style.paddingLeft = "20px";
+            }
+        }
+
+        btn.addEventListener("click", () =>
+            displayMessage("Woo, this is a different message!")
+        );
+    </script>
+</body>
+</html>
