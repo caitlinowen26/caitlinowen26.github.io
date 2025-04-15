@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name ="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bouncing Balls</title>
+    <link rel="stylesheet" href="ica13.css">
+
+    <style>
+
+    </style>
+</head>
+<body>
+   <h1>Bouncing Balls</h1>
+   <canvas></canvas>
+
+   <script>
+    //set up canvas
+    const canvas = document.querySelector("canvas");
+    const ctx = canvas.getContext("2d");
+
+    const width = (canvas.width = window.innerWidth);
+    const height = (canvas.height = window.innerHeight);    
+
+    //function to generate random number:
+    function random(min, max) {
+    return Math.floor(Math.random() * (max - min + 1)) + min;
+    }
+
+    function randomRGB() {
+    return `rgb(${random(0, 255)} ${random(0, 255)} ${random(0, 255)})`;
+    }
+
+    class ball{
+        constructor(x, y, velX, velY, color, size);
+        this.x = x;
+        this.y = y;
+        this.velX = velX;
+        this.velY = velY;
+        this.color = color;
+        this.size = size;
+    }
+
+    const ball1 = new Ball(10, 10, 1, 1, 'rgb(2, 55, 0, 0)', 10);
+   </script>
+</body>
+</html>
