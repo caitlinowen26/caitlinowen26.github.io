@@ -1,3 +1,4 @@
+<!--
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -41,7 +42,331 @@
         this.size = size;
     }
 
-    const ball1 = new Ball(10, 10, 1, 1, 'rgb(2, 55, 0, 0)', 10);
+    const balls = new Ball(10, 10, 1, 1, 'rgb(2, 55, 0, 0)', 10);
+
+    collisionDetect(){
+        for(const bal of balls){
+            if(this != ball){
+                const dx = this.x - 
+            }
+        }
+    }
+
+    while(balls.length < 25)
+    {
+        const size = random{15, }
+    }
    </script>
 </body>
+</html>
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bouncing Balls</title>
+  <link rel="stylesheet" href="ica13.css">
+  <style>
+    body {
+      background-color: black; /* Set background to black */
+    }
+  </style>
+</head>
+
+<body>
+  <h1>Bouncing Balls</h1>
+  <canvas></canvas>
+  <script>
+    //set up canvas
+    const canvas = document.querySelector("canvas");
+    const ctx = canvas.getContext("2d");
+
+    const width = (canvas.width = window.innerWidth);
+    const height = (canvas.height = window.innerHeight);
+
+    //function to generate random number:
+    function random(min, max) {
+      return Math.floor(Math.random() * (max - min + 1)) + min;
+    }
+
+    function randomRGB() {
+      return `rgb(${random(0, 255)}, ${random(0, 255)}, ${random(0, 255)})`;
+    }
+
+    class Ball {
+      constructor(x, y, velX, velY, color, size) {
+        this.x = x;
+        this.y = y;
+        this.velX = velX;
+        this.velY = velY;
+        this.color = color;
+        this.size = size;
+      }
+
+      draw() {
+        // Draw the main ball
+        ctx.beginPath();
+        ctx.fillStyle = this.color;
+        ctx.arc(this.x, this.y, this.size, 0, 2 * Math.PI);
+        ctx.fill();
+
+        // Draw trails (a series of circles with decreasing opacity)
+        const trailLength = 5; // Adjust for longer or shorter trails
+        for (let i = 1; i <= trailLength; i++) {
+          ctx.beginPath();
+          ctx.fillStyle = `rgba(${parseInt(this.color.substring(4, 7))}, ${parseInt(this.color.substring(9, 12))}, ${parseInt(this.color.substring(14, 17))}, ${1 - (i / trailLength)})`; // Adjust opacity
+          ctx.arc(this.x - this.velX * i, this.y - this.velY * i, this.size * (1 - (i / (trailLength * 2))), 0, 2 * Math.PI); // Adjust size and position
+          ctx.fill();
+        }
+      }
+
+      update() {
+        if (this.x + this.size >= width || this.x - this.size <= 0) {
+          this.velX = -this.velX;
+        }
+
+        if (this.y + this.size >= height || this.y - this.size <= 0) {
+          this.velY = -this.velY;
+        }
+
+        this.x += this.velX;
+        this.y += this.velY;
+      }
+
+      collisionDetect() {
+        for (let j = 0; j < balls.length; j++) {
+          if (!(this === balls[j])) {
+            const dx = this.x - balls[j].x;
+            const dy = this.y - balls[j].y;
+            const distance = Math.sqrt(dx * dx + dy * dy);
+
+            if (distance < this.size + balls[j].size) {
+              // Collision detected!
+              this.handleCollision(balls[j]);
+            }
+          }
+        }
+      }
+
+      handleCollision(otherBall) {
+        // Calculate the distance vector
+        let dx = otherBall.x - this.x;
+        let dy = otherBall.y - this.y;
+
+        // Calculate the angle of the collision
+        let collisionAngle = Math.atan2(dy, dx);
+
+        // Calculate the magnitude of each ball's velocity
+        let speed1 = Math.sqrt(this.velX * this.velX + this.velY * this.velY);
+        let speed2 = Math.sqrt(otherBall.velX * otherBall.velX + otherBall.velY * otherBall.velY);
+
+        // Calculate the new velocities for each ball
+        let newVelX1 = speed1 * Math.cos(collisionAngle);
+        let newVelY1 = speed1 * Math.sin(collisionAngle);
+        let newVelX2 = speed2 * Math.cos(collisionAngle + Math.PI);
+        let newVelY2 = speed2 * Math.sin(collisionAngle + Math.PI);
+
+        // Set the new velocities
+        this.velX = newVelX1;
+        this.velY = newVelY1;
+        otherBall.velX = newVelX2;
+        otherBall.velY = newVelY2;
+      }
+    }
+
+    const balls = [];
+
+    while (balls.length < 25) {
+      const size = random(10, 20);
+      const ball = new Ball(
+        random(0 + size, width - size),
+        random(0 + size, height - size),
+        random(-5, 5),
+        random(-5, 5),
+        randomRGB(),
+        size
+      );
+
+      balls.push(ball);
+    }
+
+    function loop() {
+      ctx.fillStyle = "rgba(0, 0, 0, 0.2)"; // Slightly transparent black for trails
+      ctx.fillRect(0, 0, width, height);
+
+      for (const ball of balls) {
+        ball.draw();
+        ball.update();
+        ball.collisionDetect();
+      }
+
+      requestAnimationFrame(loop);
+    }
+
+    loop();
+  </script>
+</body>
+
+</html>
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bouncing Balls</title>
+  <link rel="stylesheet" href="ica13.css">
+  <style>
+    body {
+      background-color: black;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>Bouncing Balls</h1>
+  <canvas></canvas>
+  <script>
+    //set up canvas
+    const canvas = document.querySelector("canvas");
+    const ctx = canvas.getContext("2d");
+
+    const width = (canvas.width = window.innerWidth);
+    const height = (canvas.height = window.innerHeight);
+
+    //function to generate random number:
+    function random(min, max) {
+      return Math.floor(Math.random() * (max - min + 1)) + min;
+    }
+
+    function randomRGB() {
+      return `rgb(${random(0, 255)}, ${random(0, 255)}, ${random(0, 255)})`;
+    }
+
+    class Ball {
+      constructor(x, y, velX, velY, color, size) {
+        this.x = x;
+        this.y = y;
+        this.velX = velX;
+        this.velY = velY;
+        this.color = color;
+        this.size = size;
+      }
+
+      draw() {
+        // Draw the main ball
+        ctx.beginPath();
+        ctx.fillStyle = this.color;
+        ctx.arc(this.x, this.y, this.size, 0, 2 * Math.PI);
+        ctx.fill();
+
+        // Draw trails (a series of circles with decreasing opacity)
+        const trailLength = 5; // Adjust for longer or shorter trails
+        for (let i = 1; i <= trailLength; i++) {
+          ctx.beginPath();
+          ctx.fillStyle = `rgba(${parseInt(this.color.substring(4, 7))}, ${parseInt(this.color.substring(9, 12))}, ${parseInt(this.color.substring(14, 17))}, ${1 - (i / trailLength)})`; // Adjust opacity
+          ctx.arc(this.x - this.velX * i, this.y - this.velY * i, this.size * (1 - (i / (trailLength * 2))), 0, 2 * Math.PI); // Adjust size and position
+          ctx.fill();
+        }
+      }
+
+      update() {
+        if (this.x + this.size >= width || this.x - this.size <= 0) {
+          this.velX = -this.velX;
+        }
+
+        if (this.y + this.size >= height || this.y - this.size <= 0) {
+          this.velY = -this.velY;
+        }
+
+        this.x += this.velX;
+        this.y += this.velY;
+      }
+
+      collisionDetect() {
+        for (let j = 0; j < balls.length; j++) {
+          if (!(this === balls[j])) {
+            const dx = this.x - balls[j].x;
+            const dy = this.y - balls[j].y;
+            const distance = Math.sqrt(dx * dx + dy * dy);
+
+            if (distance < this.size + balls[j].size) {
+              // Collision detected!
+              this.handleCollision(balls[j]);
+            }
+          }
+        }
+      }
+
+      handleCollision(otherBall) {
+        // Calculate the collision axis
+        let collisionX = this.x - otherBall.x;
+        let collisionY = this.y - otherBall.y;
+
+        // Normalize the collision vector
+        let dist = Math.sqrt(collisionX * collisionX + collisionY * collisionY);
+        let normalizedCollisionX = collisionX / dist;
+        let normalizedCollisionY = collisionY / dist;
+
+        // Separation to prevent sticking (APPLY SEPARATION *BEFORE* VELOCITY UPDATE)
+        let separation = (this.size + otherBall.size - dist) / 2;
+        this.x += separation * normalizedCollisionX;
+        this.y += separation * normalizedCollisionY;
+        otherBall.x -= separation * normalizedCollisionX;
+        otherBall.y -= separation * normalizedCollisionY;
+
+        // Calculate the dot product of the velocities along the collision normal
+        let v1 = this.velX * normalizedCollisionX + this.velY * normalizedCollisionY;
+        let v2 = otherBall.velX * normalizedCollisionX + otherBall.velY * normalizedCollisionY;
+
+        // Swap the velocities along the collision normal
+        let tempVelX = this.velX;
+        let tempVelY = this.velY;
+
+        this.velX = otherBall.velX - (v1 - v2) * normalizedCollisionX;
+        this.velY = otherBall.velY - (v1 - v2) * normalizedCollisionY;
+        otherBall.velX = tempVelX + (v1 - v2) * normalizedCollisionX;
+        otherBall.velY = tempVelY + (v1 - v2) * normalizedCollisionY;
+      }
+    }
+
+    const balls = [];
+    const numBalls = 15; // Reduced number of balls
+
+    while (balls.length < numBalls) {
+      const size = random(10, 20);
+      const ball = new Ball(
+        random(0 + size, width - size),
+        random(0 + size, height - size),
+        random(-3, 3), // Reduced initial velocity
+        random(-3, 3), // Reduced initial velocity
+        randomRGB(),
+        size
+      );
+
+      balls.push(ball);
+    }
+
+    function loop() {
+      ctx.fillStyle = "rgba(0, 0, 0, 0.2)"; // Slightly transparent black for trails
+      ctx.fillRect(0, 0, width, height);
+
+      for (const ball of balls) {
+        ball.draw();
+        ball.update();
+        ball.collisionDetect();
+      }
+
+      requestAnimationFrame(loop);
+    }
+
+    loop();
+  </script>
+</body>
+
 </html>
