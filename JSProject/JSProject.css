@@ -1,5 +1,5 @@
 body {
-    font-family: Arial, sans-serif, white;
+    font-family: 'Orbitron', sans-serif; /* Use the chosen font */
     background-color: rgba(0, 0, 0, 0.798);
     display: flex;
     justify-content: center;
