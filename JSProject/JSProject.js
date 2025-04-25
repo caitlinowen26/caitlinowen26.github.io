@@ -84,8 +84,11 @@ function startTimer() {
 
         if (timeLeft <= 0) {
             clearInterval(timer);
-            alert('Time is up! You have to start over.');
-            resetGame(); // Reset the game if time runs out
+            flashRed(); // Call the flash function first
+            setTimeout(() => {
+                alert('Time is up! You have to start over.'); // Show alert after flashing
+                resetGame(); // Reset the game if time runs out
+            }, 3000); // Delay the alert for 3 seconds
         }
     }, 1000);
 }
@@ -103,6 +106,16 @@ function resetGame() {
     document.getElementById('morseInput').value = ''; // Clear input
     document.getElementById('result').innerText = ''; // Clear previous result
     resetTimer(); // Reset the timer
+}
+
+// Flash the screen red for 3 seconds
+function flashRed() {
+    const originalColor = document.body.style.backgroundColor; // Save the original background color
+    document.body.style.backgroundColor = 'red'; // Change to red
+
+    setTimeout(() => {
+        document.body.style.backgroundColor = originalColor; // Revert back to original color
+    }, 3000); // Flash for 3 seconds
 }
 
 // Start the timer when the page loads
