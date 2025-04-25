@@ -1,6 +1,7 @@
 body {
     font-family: 'Orbitron', sans-serif; /* Use the chosen font */
-    background-color: rgba(0, 0, 0, 0.798);
+    background-color: #1a1a1a; /* Dark background */
+    color: #00ff00; /* Bright green text for a sci-fi look */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -9,40 +10,78 @@ body {
 }
 
 .container {
-    background: black;
+    background: rgba(0, 0, 0, 0.8); /* Semi-transparent black background */
     padding: 20px;
     border-radius: 8px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 20px rgba(0, 255, 0, 0.5); /* Green glow shadow */
     text-align: center;
+    z-index: 1; /* Ensure container is above the Morse key */
 }
 
 h1 {
     margin-bottom: 20px;
+    color: #00ff00; /* Bright green for the heading */
 }
 
 textarea {
     width: 100%;
     height: 100px;
     padding: 10px;
-    border: 1px solid #ccc;
+    border: 1px solid #00ff00; /* Green border */
     border-radius: 4px;
     margin-bottom: 10px;
+    background-color: #333; /* Darker background for textarea */
+    color: #00ff00; /* Text color in textarea */
 }
 
 button {
     padding: 10px 20px;
     border: none;
-    background: #28a745;
+    background: #28a745; /* Green background for button */
     color: white;
     border-radius: 4px;
     cursor: pointer;
+    transition: background 0.3s;
 }
 
 button:hover {
-    background: #218838;
+    background: #218838; /* Darker green on hover */
 }
 
 #result {
     margin-top: 20px;
     font-weight: bold;
+    color: #ffcc00; /* Yellow color for results */
+}
+
+#timer {
+    font-size: 24px;
+    color: #ff0000; /* Red for the timer */
+    margin-top: 20px;
+}
+
+#morseKey {
+    position: fixed; /* Fixed position on the side */
+    right: 20px; /* Distance from the right */
+    top: 20px; /* Distance from the top */
+    background: rgba(0, 0, 0, 0.8); /* Semi-transparent background */
+    color: #00ff00; /* Bright green text */
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 20px rgba(0, 255, 0, 0.5); /* Green glow shadow */
+    z-index: 1; /* Ensure it appears above other content */
+}
+
+#morseKey h2 {
+    margin-top: 0; /* Remove margin from top */
+}
+
+#morseKey table {
+    width: 100%; /* Full width for the table */
+    border-collapse: collapse; /* Collapse borders */
+}
+
+#morseKey td {
+    padding: 5px; /* Padding for table cells */
+    border: 1px solid #00ff00; /* Green border for table cells */
 }
