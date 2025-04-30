@@ -118,3 +118,27 @@ button:hover {
     border: 1px solid #00ff00; /* Green border for table cells */
 }
 
+@keyframes pulse {
+    0% {
+        background-color: rgba(255, 0, 0, 0.5);
+    }
+    50% {
+        background-color: rgba(255, 0, 0, 0.7);
+    }
+    100% {
+        background-color: rgba(255, 0, 0, 0.5);
+    }
+}
+
+#overlay {
+    position: fixed; /* Cover the entire screen */
+    top: 0;
+    left: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    background-color: rgba(255, 0, 0, 0.5); /* Initial background color */
+    display: none; /* Initially hidden */
+    z-index: 1000; /* Ensure it appears above other content */
+    animation: pulse 0.5s infinite; /* Apply the pulsing animation */
+}
+

@@ -49,54 +49,53 @@ function showAlert(message) {
     }, 3000);
 }
 
-document.getElementById('submitBtn').addEventListener('click', function() {
-    const morseInput = document.getElementById('morseInput').value.trim();
+document.addEventListener('DOMContentLoaded', () => {
+    document.getElementById('submitBtn').addEventListener('click', function() {
+        const morseInput = document.getElementById('morseInput').value.trim();
+        console.log(`Submit clicked with input: ${morseInput}`); // Debugging log
 
-    if (!isConfirming) {
-        if (currentDigit <= totalDigits) {
-            const digit = decodeMorse(morseInput);
+        if (!isConfirming) {
+            if (currentDigit <= totalDigits) {
+                const digit = decodeMorse(morseInput);
+                console.log(`Decoded digit: ${digit}`); // Debugging log
 
-            if (digit && digit.length === 1) { // Ensure only one digit is entered
-                phoneNumber += digit; // Append the digit to the phone number
-                currentDigit++; // Move to the next digit
-                resetTimer(); // Reset the timer
+                if (digit && digit.length === 1) { // Ensure only one digit is entered
+                    phoneNumber += digit; // Append the digit to the phone number
+                    currentDigit++; // Move to the next digit
+                    resetTimer(); // Reset the timer
 
-                if (currentDigit <= totalDigits) {
-                    document.getElementById('morsePrompt').innerText = `Digit ${currentDigit}:`;
-                    document.getElementById('morseInput').value = ''; // Clear input
+                    if (currentDigit <= totalDigits) {
+                        document.getElementById('morsePrompt').innerText = `Digit ${currentDigit}:`;
+                        document.getElementById('morseInput').value = ''; // Clear input
+                    } else {
+                        document.getElementById('result').innerText = `Is this your number? ${phoneNumber}`;
+                        document.getElementById('morsePrompt').innerText = 'Enter "yes" or "no" in Morse code:';
+                        isConfirming = true; // Set confirming flag
+                        document.getElementById('morseInput').value = ''; // Clear input
+                    }
                 } else {
-                    document.getElementById('result').innerText = `Is this your number? ${phoneNumber}`;
-                    document.getElementById('morsePrompt').innerText = 'Enter "yes" or "no" in Morse code:';
-                    isConfirming = true; // Set confirming flag
-                    document.getElementById('morseInput').value = ''; // Clear input
+                    document.getElementById('result').innerText = 'Invalid Morse Code! Enter a valid digit.';
                 }
+            }
+        } else {
+            // Confirming phase
+            const confirmation = decodeMorse(morseInput);
+            console.log(`Confirmation input: ${confirmation}`); // Debugging log
+
+            if (confirmation === 'y') {
+                document.getElementById('result').innerText = `Your phone number is: ${phoneNumber}`;
+                document.getElementById('morsePrompt').innerText = 'Thank you!';
+                document.getElementById('morseInput').style.display = 'none'; // Hide input after confirmation
+                document.getElementById('submitBtn').style.display = 'none'; // Hide button after confirmation
+                clearInterval(timer); // Clear the timer
+            } else if (confirmation === 'n') {
+                // Reset for re-entry
+                resetGame();
             } else {
-                document.getElementById('result').innerText = 'Invalid Morse Code! Enter a valid digit.';
+                document.getElementById('result').innerText = 'Invalid! Enter either "yes" or "no".';
             }
         }
-    } else {
-        // Confirming phase
-        const confirmation = decodeMorse(morseInput);
-
-        if (confirmation === 'y') {
-            document.getElementById('result').innerText = `Your phone number is: ${phoneNumber}`;
-            document.getElementById('morsePrompt').innerText = 'Thank you!';
-            document.getElementById('morseInput').style.display = 'none'; // Hide input after confirmation
-            document.getElementById('submitBtn').style.display = 'none'; // Hide button after confirmation
-            clearInterval(timer); // Clear the timer
-        } else if (confirmation === 'n') {
-            // Reset for re-entry
-            currentDigit = 1;
-            phoneNumber = '';
-            isConfirming = false;
-            resetTimer(); // Reset timer
-            document.getElementById('morsePrompt').innerText = `Digit ${currentDigit}:`;
-            document.getElementById('morseInput').value = ''; // Clear input
-            document.getElementById('result').innerText = ''; // Clear previous result
-        } else {
-            document.getElementById('result').innerText = 'Invalid! Enter either "yes" or "no".';
-        }
-    }
+    });
 });
 
 function decodeMorse(morse) {
@@ -107,16 +106,16 @@ function decodeMorse(morse) {
 function startTimer() {
     timeLeft = 15; // Reset time
     document.getElementById('timer').innerText = `${timeLeft} seconds`;
+
     timer = setInterval(() => {
         timeLeft--;
         document.getElementById('timer').innerText = `${timeLeft} seconds`;
 
         if (timeLeft <= 0) {
             clearInterval(timer);
-            flashRed(); // Call the flash function first
-            setTimeout(() => {
-                showAlert('Times up! Try again >:)'); // Show custom alert after flashing
-            }, 3000); // Delay the alert for 3 seconds
+            flashRed(); // Flash the screen red when time is up
+            showAlert('Times up >:)'); // Notify user
+            resetGame(); // Start over if time runs out
         }
     }, 1000);
 }
@@ -127,24 +126,26 @@ function resetTimer() {
 }
 
 function resetGame() {
-    currentDigit = 1;
-    phoneNumber = '';
-    isConfirming = false;
+    currentDigit = 1; // Reset to the first digit
+    phoneNumber = ''; // Clear stored phone number
+    isConfirming = false; // Reset confirming flag
+
     document.getElementById('morsePrompt').innerText = `Digit ${currentDigit}:`;
     document.getElementById('morseInput').value = ''; // Clear input
     document.getElementById('result').innerText = ''; // Clear previous result
-    resetTimer(); // Reset the timer
+    resetTimer(); // Reset timer
 }
 
-// Flash the screen red for 3 seconds
+// Flash the screen red with a pulsing effect for 3 seconds
 function flashRed() {
-    const originalColor = document.body.style.backgroundColor; // Save the original background color
-    document.body.style.backgroundColor = 'red'; // Change to red
+    const overlay = document.getElementById('overlay');
+    overlay.style.display = 'block'; // Show the overlay
 
     setTimeout(() => {
-        document.body.style.backgroundColor = originalColor; // Revert back to original color
+        overlay.style.display = 'none'; // Hide the overlay after 3 seconds
     }, 3000); // Flash for 3 seconds
 }
 
 // Start the timer when the page loads
 window.onload = startTimer;
+
