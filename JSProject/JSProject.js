@@ -18,7 +18,36 @@ const totalDigits = 10; // Total digits in a phone number
 let phoneNumber = ''; // Store the phone number
 let isConfirming = false; // Flag to check if we are confirming the number
 let timer; // Timer variable
-let timeLeft = 10; // Time in seconds
+let timeLeft = 15; // Time in seconds
+
+// Function to create and display a custom alert
+function showAlert(message) {
+    const alertDiv = document.createElement('div');
+    alertDiv.id = 'customAlert';
+    alertDiv.innerText = message;
+    document.body.appendChild(alertDiv);
+
+    // Style the alert
+    alertDiv.style.cssText = `
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background-color: rgba(0, 0, 0, 0.9);
+        color: #ffcc00;
+        padding: 20px;
+        border-radius: 8px;
+        z-index: 1000;
+        font-size: 20px;
+        text-align: center;
+        box-shadow: 0 0 20px rgba(0, 255, 0, 0.8);
+    `;
+
+    // Remove the alert after 3 seconds
+    setTimeout(() => {
+        document.body.removeChild(alertDiv);
+    }, 3000);
+}
 
 document.getElementById('submitBtn').addEventListener('click', function() {
     const morseInput = document.getElementById('morseInput').value.trim();
@@ -33,23 +62,24 @@ document.getElementById('submitBtn').addEventListener('click', function() {
                 resetTimer(); // Reset the timer
 
                 if (currentDigit <= totalDigits) {
-                    document.getElementById('morsePrompt').innerText = `Please enter the Morse code for digit ${currentDigit}:`;
+                    document.getElementById('morsePrompt').innerText = `Digit ${currentDigit}:`;
                     document.getElementById('morseInput').value = ''; // Clear input
                 } else {
                     document.getElementById('result').innerText = `Is this your number? ${phoneNumber}`;
-                    document.getElementById('morsePrompt').innerText = 'Please enter "yes" or "no" in Morse code:';
+                    document.getElementById('morsePrompt').innerText = 'Enter "yes" or "no" in Morse code:';
                     isConfirming = true; // Set confirming flag
                     document.getElementById('morseInput').value = ''; // Clear input
                 }
             } else {
-                document.getElementById('result').innerText = 'Invalid Morse Code! Please enter a valid digit.';
+                document.getElementById('result').innerText = 'Invalid Morse Code! Enter a valid digit.';
             }
         }
     } else {
         // Confirming phase
         const confirmation = decodeMorse(morseInput);
+
         if (confirmation === 'y') {
-            document.getElementById('result').innerText = `Your confirmed phone number is: ${phoneNumber}`;
+            document.getElementById('result').innerText = `Your phone number is: ${phoneNumber}`;
             document.getElementById('morsePrompt').innerText = 'Thank you!';
             document.getElementById('morseInput').style.display = 'none'; // Hide input after confirmation
             document.getElementById('submitBtn').style.display = 'none'; // Hide button after confirmation
@@ -60,11 +90,11 @@ document.getElementById('submitBtn').addEventListener('click', function() {
             phoneNumber = '';
             isConfirming = false;
             resetTimer(); // Reset timer
-            document.getElementById('morsePrompt').innerText = `Please enter the Morse code for digit ${currentDigit}:`;
+            document.getElementById('morsePrompt').innerText = `Digit ${currentDigit}:`;
             document.getElementById('morseInput').value = ''; // Clear input
             document.getElementById('result').innerText = ''; // Clear previous result
         } else {
-            document.getElementById('result').innerText = 'Invalid Morse Code! Please enter "yes" or "no".';
+            document.getElementById('result').innerText = 'Invalid! Enter either "yes" or "no".';
         }
     }
 });
@@ -75,19 +105,17 @@ function decodeMorse(morse) {
 
 // Timer functions
 function startTimer() {
-    timeLeft = 10; // Reset time
-    document.getElementById('timer').innerText = `Time left: ${timeLeft} seconds`;
-    
+    timeLeft = 15; // Reset time
+    document.getElementById('timer').innerText = `${timeLeft} seconds`;
     timer = setInterval(() => {
         timeLeft--;
-        document.getElementById('timer').innerText = `Time left: ${timeLeft} seconds`;
+        document.getElementById('timer').innerText = `${timeLeft} seconds`;
 
         if (timeLeft <= 0) {
             clearInterval(timer);
             flashRed(); // Call the flash function first
             setTimeout(() => {
-                alert('Time is up! You have to start over.'); // Show alert after flashing
-                resetGame(); // Reset the game if time runs out
+                showAlert('Times up! Try again >:)'); // Show custom alert after flashing
             }, 3000); // Delay the alert for 3 seconds
         }
     }, 1000);
@@ -102,7 +130,7 @@ function resetGame() {
     currentDigit = 1;
     phoneNumber = '';
     isConfirming = false;
-    document.getElementById('morsePrompt').innerText = `Please enter the Morse code for digit ${currentDigit}:`;
+    document.getElementById('morsePrompt').innerText = `Digit ${currentDigit}:`;
     document.getElementById('morseInput').value = ''; // Clear input
     document.getElementById('result').innerText = ''; // Clear previous result
     resetTimer(); // Reset the timer
