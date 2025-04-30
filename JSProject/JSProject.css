@@ -18,11 +18,35 @@ body {
     z-index: 1; /* Ensure container is above the Morse key */
     width: 90%; /* Make the container take up more width, was 80 */
     max-width: 900px; /* Maximum width of the container, was 800 */
-    height: 70%; /* Added height to make it taller */
+    height: 70%, auto; /* Added height to make it taller , and adjust based off of screen size */
     display: flex;
     flex-direction: column;
     justify-content: center; /* Center content vertically */
     align-items: center; /* Center items horizontally */
+}
+
+/* Responsive Styles for different screens */
+@media (max-width: 600px) {
+    h1 {
+        font-size: 1.5rem; /* Adjust font size for smaller screens */
+    }
+
+    textarea {
+        height: 80px; /* Adjust height for smaller screens */
+    }
+
+    button {
+        padding: 8px 15px; /* Adjust button size */
+    }
+
+    #result, #timer {
+        font-size: 1.2rem; /* Adjust font size for results and timer */
+    }
+
+    #morseKey {
+        font-size: 0.9rem; /* Adjust font size for Morse key */
+        padding: 10px; /* Adjust padding for Morse key */
+    }
 }
 
 h1 {
@@ -94,95 +118,3 @@ button:hover {
     border: 1px solid #00ff00; /* Green border for table cells */
 }
 
-
-
-
-/*
-body {
-    font-family: 'Orbitron', sans-serif; 
-    background-color: #1a1a1a; 
-    color: #00ff00; 
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    margin: 0;
-}
-
-.container {
-    background: rgba(0, 0, 0, 0.8); 
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 2px 20px rgba(0, 255, 0, 0.5); 
-    text-align: center;
-    z-index: 1; 
-}
-
-h1 {
-    margin-bottom: 20px;
-    color: #00ff00; 
-}
-
-textarea {
-    width: 100%;
-    height: 100px;
-    padding: 10px;
-    border: 1px solid #00ff00; 
-    border-radius: 4px;
-    margin-bottom: 10px;
-    background-color: #333; 
-    color: #00ff00; 
-}
-
-button {
-    padding: 10px 20px;
-    border: none;
-    background: #28a745; 
-    color: white;
-    border-radius: 4px;
-    cursor: pointer;
-    transition: background 0.3s;
-}
-
-button:hover {
-    background: #218838; 
-}
-
-#result {
-    margin-top: 20px;
-    font-weight: bold;
-    color: #ffcc00; 
-}
-
-#timer {
-    font-size: 24px;
-    color: #ff0000; 
-    margin-top: 20px;
-}
-
-#morseKey {
-    position: fixed; 
-    right: 20px; 
-    top: 20px; 
-    background: rgba(0, 0, 0, 0.8); 
-    color: #00ff00; 
-    padding: 15px;
-    border-radius: 8px;
-    box-shadow: 0 2px 20px rgba(0, 255, 0, 0.5); 
-    z-index: 1; 
-}
-
-#morseKey h2 {
-    margin-top: 0; 
-}
-
-#morseKey table {
-    width: 100%; 
-    border-collapse: collapse; 
-}
-
-#morseKey td {
-    padding: 5px; 
-    border: 1px solid #00ff00; 
-}
-*/
