@@ -103,17 +103,43 @@ h3{font-size:clamp(18px,2.4vw,22px)}
 .links{display:flex; gap:12px}
 .links a{color:#2f2b2a}
 
-/* Contact */
+/* =============== Contact (updated) =============== */
+
+/* Wrapper that holds the grid of cards (left) and the form (right) */
+.contact-wrap{
+  display:grid;
+  gap:16px;
+}
+
+/* Grid for the cards themselves */
 .contact-grid{
-  display:grid; gap:16px; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-  margin-bottom:18px;
+  display:grid;
+  gap:16px;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  align-items:stretch;
 }
+
+/* Cards are uniform height and tidy */
 .contact-card{
-  background:var(--card); border:1px solid var(--line); border-radius:var(--radius);
-  padding:16px; box-shadow: var(--shadow);
+  background:var(--card);
+  border:1px solid var(--line);
+  border-radius:var(--radius);
+  padding:16px;
+  box-shadow: var(--shadow);
+  display:flex;
+  flex-direction:column;
+  height:100%;
+  word-break: break-word;
 }
+
+.contact-card .btn.small{
+  align-self:flex-start;
+}
+
+/* Form styling (kept from your version) */
 .contact-form{
-  display:grid; gap:12px; background:var(--card); border:1px solid var(--line);
+  display:grid; gap:12px;
+  background:var(--card); border:1px solid var(--line);
   padding:16px; border-radius:var(--radius); box-shadow: var(--shadow);
   max-width:680px;
 }
@@ -123,6 +149,15 @@ input, textarea{
   background:#fff; color:var(--ink)
 }
 input:focus, textarea:focus{outline:2px solid var(--peach); outline-offset:1px}
+
+/* Desktop: cards on the left, form on the right */
+@media (min-width: 980px){
+  .contact-wrap{
+    grid-template-columns: 2fr 1.2fr;
+    align-items:start;
+  }
+  .contact-form{ height:100%; }
+}
 
 /* Footer */
 .site-footer{max-width:1100px; margin:40px auto 24px; padding:0 20px; color:var(--muted); text-align:center}
