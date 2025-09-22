@@ -1,7 +1,8 @@
-// Simple hash router
+// Simple hash router (no project-detail routes)
 const routes = {
   '/': document.getElementById('home'),
   '/projects': document.getElementById('projects'),
+  '/art': document.getElementById('art'),
   '/contact': document.getElementById('contact'),
 };
 

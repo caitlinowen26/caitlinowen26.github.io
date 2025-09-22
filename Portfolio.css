@@ -1,13 +1,13 @@
 :root{
   /* Soft, muted palette (pinky / nude / peach, low saturation) */
-  --bg: #fff9f6;          /* off-white peach */
-  --bg-2:#f8efe9;         /* nude wash */
-  --ink:#2b2b2b;          /* main text */
-  --muted:#6b6765;        /* dim text */
-  --rose:#d8a8a6;         /* dusty pink */
-  --peach:#e7b8a5;        /* peach */
-  --blush:#e2c7bd;        /* nude blush */
-  --line:#e9ddd7;         /* dividers */
+  --bg: #fff9f6;
+  --bg-2:#f8efe9;
+  --ink:#2b2b2b;
+  --muted:#6b6765;
+  --rose:#d8a8a6;
+  --peach:#e7b8a5;
+  --blush:#e2c7bd;
+  --line:#e9ddd7;
   --card:#ffffff;
   --shadow: 0 10px 25px rgba(60,35,20,.08);
   --radius: 18px;
@@ -103,43 +103,25 @@ h3{font-size:clamp(18px,2.4vw,22px)}
 .links{display:flex; gap:12px}
 .links a{color:#2f2b2a}
 
-/* =============== Contact (updated) =============== */
+/* Contact */
+.contact-wrap{ display:grid; gap:16px; }
 
-/* Wrapper that holds the grid of cards (left) and the form (right) */
-.contact-wrap{
-  display:grid;
-  gap:16px;
-}
-
-/* Grid for the cards themselves */
 .contact-grid{
-  display:grid;
-  gap:16px;
+  display:grid; gap:16px;
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
   align-items:stretch;
 }
 
-/* Cards are uniform height and tidy */
 .contact-card{
-  background:var(--card);
-  border:1px solid var(--line);
-  border-radius:var(--radius);
-  padding:16px;
-  box-shadow: var(--shadow);
-  display:flex;
-  flex-direction:column;
-  height:100%;
+  background:var(--card); border:1px solid var(--line); border-radius:var(--radius);
+  padding:16px; box-shadow: var(--shadow);
+  display:flex; flex-direction:column; height:100%;
   word-break: break-word;
 }
+.contact-card .btn.small{ align-self:flex-start; }
 
-.contact-card .btn.small{
-  align-self:flex-start;
-}
-
-/* Form styling (kept from your version) */
 .contact-form{
-  display:grid; gap:12px;
-  background:var(--card); border:1px solid var(--line);
+  display:grid; gap:12px; background:var(--card); border:1px solid var(--line);
   padding:16px; border-radius:var(--radius); box-shadow: var(--shadow);
   max-width:680px;
 }
@@ -150,7 +132,7 @@ input, textarea{
 }
 input:focus, textarea:focus{outline:2px solid var(--peach); outline-offset:1px}
 
-/* Desktop: cards on the left, form on the right */
+/* Desktop: cards left, form right */
 @media (min-width: 980px){
   .contact-wrap{
     grid-template-columns: 2fr 1.2fr;
