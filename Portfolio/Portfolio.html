@@ -1,0 +1,329 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Caitlin Owen — Portfolio</title>
+  <meta name="description" content="Portfolio of Caitlin Owen — projects, experience, and contact." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="Portfolio.css" />
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="#/" data-link>
+      <span class="brand-dot" aria-hidden="true"></span>
+      <span class="brand-text">Caitlin Owen</span>
+    </a>
+
+    <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+
+    <nav class="site-nav" aria-label="Primary">
+      <a href="#/" data-link class="nav-link">Home</a>
+      <a href="#/projects" data-link class="nav-link">Projects</a>
+      <a href="#/art" data-link class="nav-link">Art</a>
+      <a href="#/contact" data-link class="nav-link">Contact</a>
+      <a class="resume-btn" href="Caitlin Owen Resume.pdf" target="_blank" rel="noopener">Resume</a>
+    </nav>
+  </header>
+
+  <main id="app" tabindex="-1">
+    <!-- Home -->
+    <section id="home" class="route active" data-route="/">
+      <div class="hero">
+        <img class="hero-photo" src="AIHeadshot.png" alt="Portrait of Caitlin Owen" />
+        <div class="hero-copy">
+          <h1>Hello, I’m <span class="accent">Caitlin</span> </h1>
+          <p class="lead">
+            Creative Technology & Design student at CU Boulder. I love creating innovative, out-of-the-box ideas 
+            and bringing them to life through design, engineering, and construction.
+          </p>
+          <ul class="quick-facts">
+            <li>• Focus: Product Design, Creative Technology, Graphic Design</li>
+            <li>• Tools: Coding (C++, JavaScript, HTML, CSS, Python, Swift), Adobe (Illustrator, InDesign, Photoshop, Lightroom), Microsoft (Word, Excel, Powerpoint), Ableton Live Studio, MuseHub, Figma, Wix</li>
+            <li>• Interests: Ideating, Form, Art, Sustainability</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Projects -->
+    <section id="projects" class="route" data-route="/projects" aria-labelledby="projects-title">
+      <h2 id="projects-title">Projects</h2>
+      <p class="section-intro">A few things I’ve built and designed. Click through for details.</p>
+
+      <div class="cards">
+        <!-- Project 1 -->
+        <article class="card">
+          <img src="AccountavapeLogo.png" alt="Accountavape project logo" />
+          <div class="card-body">
+            <h3>Accountavape</h3>
+            <p>Created alongside my Engineering Projects group, The Little Einsteins. ACCOUNTAVAPE allows users to pair their own vape devices with our system to automatically count puffs. 
+              This innovative combination of real-time tracking and accountability offers a unique and effective approach to combat the vaping epidemic.</p>
+            <a class="visit-link" href="https://sites.google.com/colorado.edu/little-einsteins/home" target="_blank" rel="noopener">Visit group website to view project! →</a>
+            <div class="tags">
+              <span>VSCode</span><span>OnShape</span><span>Arduino</span><span>Bluetooth</span><span>App Development</span><span>Graphic Design</span><span>Product Design</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- Project 2 -->
+        <article class="card">
+          <img src="Lego Instructions.png" alt="Instructions for uniquely designed Lego models" />
+          <div class="card-body">
+            <h3>Lego Instructions</h3>
+            <p>Designed and 3D modeled LEGO pieces arranged into three structures, compiled into a step-by-step PDF booklet.</p>
+            <a class="visit-link" href="Assignment 2.pdf" target="_blank" rel="noopener">View instructions! →</a>
+            <div class="tags">
+              <span>Planning</span><span>SketchUp</span><span>Illustrator</span><span>Graphic Design</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- Project 3 -->
+        <article class="card">
+          <img src="Balance Back.png" alt="Balance Back app layout for farmers" />
+          <div class="card-body">
+            <h3>Balance Back</h3>
+            <p>App design layout for farmers to track water and chemical levels across field sections.</p>
+            <a class="visit-link" href="Balance Back, App for Farmers.pdf" target="_blank" rel="noopener">View app design! →</a>
+            <div class="tags">
+              <span>Planning</span><span>Figma</span><span>App Layout</span><span>Graphic Design</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- Project 4 -->
+        <article class="card">
+          <img src="Easie Breezies.png" alt="Easie Breezies mint packaging dieline" />
+          <div class="card-body">
+            <h3>Easie Breezies</h3>
+            <p>Dieline concept for a mint brand created and designed by me.</p>
+            <a class="visit-link" href="Easie Breezies.png" target="_blank" rel="noopener">View product dieline! →</a>
+            <div class="tags">
+              <span>Illustrator</span><span>InDesign</span><span>Graphic Design</span><span>Product Design</span><span>Typography</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- Project 5 -->
+        <article class="card">
+          <img src="Colorado Symphony Flier.png" alt="Colorado Symphony Flier" />
+          <div class="card-body">
+            <h3>Flier</h3>
+            <p>Broadway-themed layout of Colorado Symphony information.</p>
+            <a class="visit-link" href="Project2Final.pdf" target="_blank" rel="noopener">View flier! →</a>
+            <div class="tags">
+              <span>Graphic Design</span><span>Illustrator</span><span>InDesign</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- Project 6 -->
+        <article class="card">
+          <img src="2x2 Stool.png" alt="3D Model of stool" />
+          <div class="card-body">
+            <h3>Hand-made Stool</h3>
+            <p>Used 2x2 Pine Lumber and Deck Screws. 3D Model designed on SketchUp first. Used Dovetail Lap Joint.</p>
+            <a class="visit-link" href="Assignment 2.pdf" target="_blank" rel="noopener">View project! →</a>
+            <div class="tags">
+              <span>SketchUp</span><span>Woodshop</span><span>Form</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- Project 7 -->
+        <article class="card">
+          <img src="MorseCodeBackground copy.png" alt="Morse Code" />
+          <div class="card-body">
+            <h3>Morse Code Phone Number Prompter Website</h3>
+            <p>Website prompts the user to enter their phone number in Morse code. If the user doesn’t finish before the timer, a bomb explodes on-screen.</p>
+            <a class="visit-link" href="https://caitlinowen26.github.io/JSProject/JSProject.html" target="_blank" rel="noopener">Try it out! →</a>
+            <div class="tags">
+              <span>HTML</span><span>CSS</span><span>JavaScript</span><span>UI/UX</span><span>Graphic Design</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- Project 8 -->
+        <article class="card">
+          <img src="Concert Catalog.png" alt="Concert Catalog" />
+          <div class="card-body">
+            <h3>Concert Catalog Website</h3>
+            <p>Website designed to showcase concert information in a visually pleasing and efficient way for users.</p>
+            <a class="visit-link" href="https://caitlinowen26.github.io/CSSProject/CSSProject.html" target="_blank" rel="noopener">View catalog! →</a>
+            <div class="tags">
+              <span>HTML</span><span>CSS</span><span>JavaScript</span><span>UI/UX</span><span>Graphic Design</span>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- Art -->
+    <section id="art" class="route" data-route="/art" aria-labelledby="art-title">
+      <h2 id="art-title">Art</h2>
+      <p class="section-intro">A few things I’ve drawn and painted. Click through for details.</p>
+
+      <div class="cards">
+        <article class="card">
+          <img src="MumPastels.jpeg" alt="Mum" />
+          <div class="card-body">
+            <h3>Mum</h3>
+            <p>Portrait of my mother, Susuannh. Goal was to capture her emotion through contrast and texture. Oil pastels.</p>
+            <a class="visit-link" href="MumPastels.jpeg" target="_blank" rel="noopener">View →</a>
+          </div>
+        </article>
+
+        <article class="card">
+          <img src="Flush.jpg" alt="Abstract" />
+          <div class="card-body">
+            <h3>Flushed</h3>
+            <p>Abstract piece playing with colors, texture, and flow. Acrylic paint.</p>
+            <a class="visit-link" href="Flush.jpg" target="_blank" rel="noopener">View →</a>
+          </div>
+        </article>
+
+        <article class="card">
+          <img src="Blue.jpeg" alt="Abstract" />
+          <div class="card-body">
+            <h3>Blush</h3>
+            <p>Abstract piece playing with colors, texture, and flow. Acrylic paint.</p>
+            <a class="visit-link" href="Blue.jpeg" target="_blank" rel="noopener">View →</a>
+          </div>
+        </article>
+
+        <article class="card">
+          <img src="FacelessCharcoal.jpg" alt="Charcoal" />
+          <div class="card-body">
+            <h3>Woman</h3>
+            <p>Charcoal sketch of a faceless woman.</p>
+            <a class="visit-link" href="FacelessCharcoal.jpg" target="_blank" rel="noopener">View →</a>
+          </div>
+        </article>
+
+        <article class="card">
+          <img src="Sister.jpg" alt="Bronwyn" />
+          <div class="card-body">
+            <h3>Bronwyn</h3>
+            <p>Abstract piece inspired by my sister’s colors. Acrylic paint.</p>
+            <a class="visit-link" href="Sister.jpg" target="_blank" rel="noopener">View →</a>
+          </div>
+        </article>
+
+        <article class="card">
+          <img src="Legs.jpg" alt="Legs" />
+          <div class="card-body">
+            <h3>Long Stretch</h3>
+            <p>Captures the feel of walking in a dark hallway at night—subject, positioning, lighting. Acrylic paint.</p>
+            <a class="visit-link" href="Legs.jpg" target="_blank" rel="noopener">View →</a>
+          </div>
+        </article>
+
+        <article class="card">
+          <img src="Midnight.jpg" alt="Midnight" />
+          <div class="card-body">
+            <h3>Midnight</h3>
+            <p>Light-play study. Acrylic paint.</p>
+            <a class="visit-link" href="Midnight.jpg" target="_blank" rel="noopener">View →</a>
+          </div>
+        </article>
+
+        <article class="card">
+          <img src="CharcoalxWatercolor.jpg" alt="Tip" />
+          <div class="card-body">
+            <h3>Tip</h3>
+            <p>Emotion at a tipping point—colors for different stresses; black shell absorbing surroundings. Charcoal + acrylic.</p>
+            <a class="visit-link" href="CharcoalxWatercolor.jpg" target="_blank" rel="noopener">View →</a>
+            </div>
+        </article>
+
+        <article class="card">
+          <img src="The Dance.jpeg" alt="The Dance" />
+          <div class="card-body">
+            <h3>The Dance</h3>
+            <p>Captures our love for music and the energy of sound. Oil paint.</p>
+            <a class="visit-link" href="The Dance.jpeg" target="_blank" rel="noopener">View →</a>
+          </div>
+        </article>
+
+        <article class="card">
+          <img src="Absorb.jpeg" alt="Absorb" />
+          <div class="card-body">
+            <h3>Absorb</h3>
+            <p>Mini canvas exercise. Felt-tip pen + watercolor.</p>
+            <a class="visit-link" href="Absorb.jpeg" target="_blank" rel="noopener">View →</a>
+          </div>
+        </article>
+
+        <article class="card">
+          <img src="Man.jpeg" alt="Man" />
+          <div class="card-body">
+            <h3>Man</h3>
+            <p>Exploring shapes and significant colors. Charcoal + acrylic.</p>
+            <a class="visit-link" href="Man.jpeg" target="_blank" rel="noopener">View →</a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" class="route" data-route="/contact" aria-labelledby="contact-title">
+      <h2 id="contact-title">Contact</h2>
+      <p class="section-intro">I’m open to part-time roles, internships, and collaborations.</p>
+
+      <div class="contact-wrap">
+        <div class="contact-grid">
+          <div class="contact-card">
+            <h3>Email</h3>
+            <p><a href="mailto:caitlinowengreen@gmail.com">caitlinowengreen@gmail.com</a></p>
+            <button class="btn small" data-copy="caitlinowengreen@gmail.com">Copy</button>
+          </div>
+
+          <div class="contact-card">
+            <h3>Phone</h3>
+            <p><a href="tel:+19143125074">+1 (914) 312-5074</a></p>
+            <button class="btn small" data-copy="+19143125074">Copy</button>
+          </div>
+
+          <div class="contact-card">
+            <h3>LinkedIn</h3>
+            <p><a href="https://www.linkedin.com/in/caitlin-owen-997a8428a" target="_blank" rel="noopener">linkedin.com/in/caitlin-owen-997a8428a</a></p>
+            <button class="btn small" data-copy="https://www.linkedin.com/in/caitlin-owen-997a8428a">Copy</button>
+          </div>
+
+          <div class="contact-card">
+            <h3>GitHub</h3>
+            <p><a href="https://github.com/caitlinowen26/caitlinowen26.github.io" target="_blank" rel="noopener">github.com/caitlinowen26/caitlinowen26.github.io</a></p>
+            <button class="btn small" data-copy="https://github.com/caitlinowen26/caitlinowen26.github.io">Copy</button>
+          </div>
+        </div>
+
+        <form class="contact-form" action="https://formspree.io/f/your-id" method="POST">
+          <label>
+            Name
+            <input name="name" type="text" required />
+          </label>
+          <label>
+            Email
+            <input name="email" type="email" required />
+          </label>
+          <label>
+            Message
+            <textarea name="message" rows="5" required></textarea>
+          </label>
+          <button class="btn primary" type="submit">Send</button>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <small>© <span id="year"></span> Caitlin Owen • Built with HTML/CSS/JS</small>
+  </footer>
+
+  <script src="Portfolio.js"></script>
+</body>
+</html>
