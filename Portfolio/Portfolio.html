@@ -1,464 +1,1096 @@
 <!doctype html>
 <html lang="en">
+
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1"
+  />
+
   <title>Caitlin Owen — Portfolio</title>
-  <meta name="description" content="Portfolio of Caitlin Owen — projects, experience, and contact." />
+
+  <meta
+    name="description"
+    content="Portfolio of Caitlin Owen — creative technology, design, art, and projects."
+  />
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+    rel="stylesheet"
+  />
+
   <link rel="stylesheet" href="Portfolio.css" />
 </head>
+
+
 <body>
-  <header class="site-header">
-    <a class="brand" href="#/" data-link>
-      <span class="brand-dot" aria-hidden="true"></span>
-      <span class="brand-text">Caitlin Owen</span>
+
+
+<!-- =========================
+     HEADER
+========================= -->
+
+<header class="site-header">
+
+  <a class="brand" href="#/" data-link>
+    CAITLIN OWEN
+  </a>
+
+
+  <button
+    class="nav-toggle"
+    aria-label="Toggle navigation"
+    aria-expanded="false"
+  >
+    <span></span>
+    <span></span>
+  </button>
+
+
+  <nav class="site-nav" aria-label="Primary">
+
+    <a
+      href="#/"
+      data-link
+      class="nav-link"
+    >
+      Home
     </a>
 
-    <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
-      <span></span><span></span><span></span>
-    </button>
-
-    <nav class="site-nav" aria-label="Primary">
-      <a href="#/" data-link class="nav-link">Home</a>
-      <a href="#/projects" data-link class="nav-link">Projects</a>
-      <a href="#/art" data-link class="nav-link">Art</a>
-      <a href="#/contact" data-link class="nav-link">Contact</a>
-      <a class="resume-btn" href="Caitlin Owen Resume.pdf" target="_blank" rel="noopener">Resume</a>
-    </nav>
-  </header>
-
-  <main id="app" tabindex="-1">
-    <!-- Home -->
-    <section id="home" class="route active" data-route="/">
-      <div class="hero">
-        <img class="hero-photo" src="PhotoOfMe.JPEG" alt="Portrait of Caitlin Owen" />
-        <div class="hero-copy">
-          <h1>Hello, I’m <span class="accent">Caitlin</span> </h1>
-          <p class="lead">
-            Creative Technology & Design student at CU Boulder. I love creating innovative, out-of-the-box ideas 
-            and bringing them to life through design, engineering, and construction.
-          </p>
-          <ul class="quick-facts">
-            <li>• Focus: Product Design, Creative Technology, Social Impact</li>
-            <li>• Tools: Coding (C++, JavaScript, HTML, CSS, Python, Swift), Adobe (Illustrator, InDesign, Photoshop, Lightroom), Microsoft (Word, Excel, Powerpoint), Ableton Live Studio, MuseHub, Figma, Wix</li>
-            <li>• Interests: Ideating, Creating, Collaborating, Art, Sustainability</li>
-          </ul>
-        </div>
-      </div>
-    </section>
-
-    <!-- Projects -->
-<section id="projects" class="route" data-route="/projects" aria-labelledby="projects-title">
-
-  <h2 id="projects-title">Projects</h2>
-
-  <p class="section-intro">
-    A selection of projects I've designed, built, and developed.
-  </p>
-
-  <div class="cards">
-
-    <!-- PROJECT 1: ACCOUNTAVAPE -->
-    <article class="card">
-
-      <img src="AccountavapeLogo.png" alt="Accountavape project logo" />
-
-      <div class="card-body">
-
-        <h3>Accountavape</h3>
-
-        <p>
-          Created alongside my Engineering Projects group, The Little Einsteins.
-          ACCOUNTAVAPE allows users to pair their own vape devices with our system
-          to automatically count puffs. This innovative combination of real-time
-          tracking and accountability offers a unique and effective approach to
-          combat the vaping epidemic.
-        </p>
-
-        <a class="visit-link"
-           href="https://sites.google.com/colorado.edu/little-einsteins/home"
-           target="_blank"
-           rel="noopener">
-          View project →
-        </a>
-
-        <div class="tags">
-          <span>VSCode</span>
-          <span>OnShape</span>
-          <span>Arduino</span>
-          <span>Bluetooth</span>
-          <span>App Development</span>
-          <span>Graphic Design</span>
-          <span>Product Design</span>
-        </div>
-
-      </div>
-
-    </article>
-
-    <!-- PROJECT 2: PHOTOBOOK -->
-    <article class="card">
-
-      <img src="Anna.png" alt="3D model of hand-made stool" />
-
-      <div class="card-body">
-
-        <h3>Girlhood Desert</h3>
-
-        <p>
-          My first photography project. Focused on composition, color, and photoshop. 
-        </p>
-
-        <a class="visit-link"
-           href="Project 1 Photobook.pdf"
-           target="_blank"
-           rel="noopener">
-          View project →
-        </a>
-
-        <div class="tags">
-          <span>Photography</span>
-          <span>Adobe Lightroom</span>
-          <span>Adobe Photoshop</span>
-        </div>
-
-      </div>
-
-    </article>
-
-
-    <!-- PROJECT 2: HAND-MADE STOOL -->
-    <article class="card">
-
-      <img src="2x2 Stool.png" alt="3D model of hand-made stool" />
-
-      <div class="card-body">
-
-        <h3>Hand-made Stool</h3>
-
-        <p>
-          Used 2x2 Pine Lumber and Deck Screws. 3D Model designed on SketchUp
-          first. Used Dovetail Lap Joint.
-        </p>
-
-        <a class="visit-link"
-           href="Asg 2_ 2x2 Furniture (1).pdf"
-           target="_blank"
-           rel="noopener">
-          View project →
-        </a>
-
-        <div class="tags">
-          <span>SketchUp</span>
-          <span>Woodshop</span>
-          <span>Form</span>
-        </div>
-
-      </div>
-
-    </article>
-
-    <!-- PROJECT 4: POKER APP -->
-<article class="card">
-
-  <!-- ADD POKER APP IMAGE HERE -->
-  <img src="Screenshot 2026-09-01 at 12.33.08 PM.png" alt="Poker Equity App" />
-
-  <div class="card-body">
-
-    <h3>Poker App</h3>
-
-    <p>
-      Used Swift Code to launch an IOS app socused on computing equity in poker.
-    </p>
-
-    <a class="visit-link"
-       href="CF2 Final Project Deliverable.pdf"
-       target="_blank"
-       rel="noopener">
-      View project →
+    <a
+      href="#/projects"
+      data-link
+      class="nav-link"
+    >
+      Work
     </a>
 
-    <div class="tags">
-      <!-- ADD SKILLS / TOOLS HERE -->
-      <span>In Progress</span>
+    <a
+      href="#/art"
+      data-link
+      class="nav-link"
+    >
+      Art
+    </a>
+
+    <a
+      href="#/contact"
+      data-link
+      class="nav-link"
+    >
+      Contact
+    </a>
+
+    <a
+      class="resume-link"
+      href="Caitlin Owen Resume.pdf"
+      target="_blank"
+      rel="noopener"
+    >
+      Resume ↗
+    </a>
+
+  </nav>
+
+</header>
+
+
+
+<main id="app" tabindex="-1">
+
+
+<!-- =========================
+     HOME
+========================= -->
+
+<section
+  id="home"
+  class="route active"
+  data-route="/"
+>
+
+  <div class="home-page">
+
+
+    <div class="hero-label reveal">
+      CREATIVE TECHNOLOGY + DESIGN
     </div>
 
-  </div>
 
-</article>
+    <div class="hero-title">
 
-<!-- PROJECT 5: TEA BOX -->
-    <article class="card">
-
-      <!-- ADD TEA BOX IMAGE HERE -->
-      <div class="project-placeholder">
-        Tea Box image coming soon
+      <div class="hero-line hero-line-one">
+        <span>CAITLIN</span>
       </div>
 
-      <div class="card-body">
+      <div class="hero-line hero-line-two">
+        <span>OWEN</span>
+      </div>
 
-        <h3>Tea Box</h3>
+    </div>
 
-        <!-- ADD DESCRIPTION HERE -->
+
+    <div class="hero-bottom">
+
+
+      <div class="hero-intro reveal">
+
         <p>
-          Project description coming soon.
+          Creative Technology & Design student at CU Boulder
+          interested in building things at the intersection of
+          design, technology, art, and social impact.
         </p>
 
-        <div class="tags">
-          <!-- ADD SKILLS / TOOLS HERE -->
-          <span>In Progress</span>
+        <a
+          href="#/projects"
+          data-link
+          class="text-link"
+        >
+          Explore my work ↘
+        </a>
+
+      </div>
+
+
+      <div class="hero-image-wrap reveal">
+
+        <img
+          class="hero-photo"
+          src="PhotoOfMe.JPEG"
+          alt="Portrait of Caitlin Owen"
+        />
+
+        <span class="image-caption">
+          BOULDER, COLORADO
+        </span>
+
+      </div>
+
+
+      <div class="hero-details reveal">
+
+        <div>
+          <span class="detail-label">FOCUS</span>
+
+          <p>
+            Product Design<br>
+            Creative Technology<br>
+            Social Impact
+          </p>
+        </div>
+
+
+        <div>
+          <span class="detail-label">INTERESTS</span>
+
+          <p>
+            Creating<br>
+            Collaborating<br>
+            Art + Sustainability
+          </p>
         </div>
 
       </div>
 
-    </article>
 
-    <!-- PROJECT 3: CAPSTONE -->
-    <article class="card">
-
-      <!-- ADD CAPSTONE IMAGE HERE -->
-      <div class="project-placeholder">
-        Capstone image coming soon
-      </div>
-
-      <div class="card-body">
-
-        <h3>Capstone</h3>
-
-        <!-- ADD DESCRIPTION HERE -->
-        <p>
-          Project description coming soon.
-        </p>
-
-        <div class="tags">
-          <!-- ADD SKILLS / TOOLS HERE -->
-          <span>In Progress</span>
-        </div>
-
-      </div>
-
-    </article>
-
-    <!-- PROJECT 6: VIBE CODING PROJECT -->
-    <article class="card">
-
-      <!-- CURRENT PROJECT -->
-      <div class="project-placeholder">
-        Project in progress
-      </div>
-
-      <div class="card-body">
-
-        <h3>Vibe Coding Project</h3>
-
-        <!-- ADD DESCRIPTION AS PROJECT DEVELOPS -->
-        <p>
-          Currently in development.
-        </p>
-
-        <div class="tags">
-          <span>In Progress</span>
-        </div>
-
-      </div>
-
-    </article>
+    </div>
 
 
-    <!-- PROJECT 7: PRODUCT DEVELOPMENT PROJECT -->
-    <article class="card">
+    <div class="scroll-note">
+      SCROLL / EXPLORE
+    </div>
 
-      <!-- CURRENT PROJECT -->
-      <div class="project-placeholder">
-        Project in progress
-      </div>
-
-      <div class="card-body">
-
-        <h3>Product Development Project</h3>
-
-        <!-- ADD DESCRIPTION AS PROJECT DEVELOPS -->
-        <p>
-          Currently in development.
-        </p>
-
-        <div class="tags">
-          <span>In Progress</span>
-        </div>
-
-      </div>
-
-    </article>
 
   </div>
 
 </section>
 
-    <!-- Art -->
-    <section id="art" class="route" data-route="/art" aria-labelledby="art-title">
-      <h2 id="art-title">Art</h2>
-      <p class="section-intro">A few things I’ve drawn and painted. Click through for details.</p>
 
-      <div class="cards">
-        <article class="card">
-          <img src="MumPastels.jpeg" alt="Mum" />
-          <div class="card-body">
-            <h3>Mum</h3>
-            <p>Portrait of my mother, Susuannh. Goal was to capture her emotion through contrast and texture. Oil pastels.</p>
-            <a class="visit-link" href="MumPastels.jpeg" target="_blank" rel="noopener">View →</a>
-          </div>
-        </article>
 
-        <article class="card">
-          <img src="Flush.jpg" alt="Abstract" />
-          <div class="card-body">
-            <h3>Flushed</h3>
-            <p>Abstract piece playing with colors, texture, and flow. Acrylic paint.</p>
-            <a class="visit-link" href="Flush.jpg" target="_blank" rel="noopener">View →</a>
-          </div>
-        </article>
 
-        <article class="card">
-          <img src="Blue.jpeg" alt="Abstract" />
-          <div class="card-body">
-            <h3>Blush</h3>
-            <p>Abstract piece playing with colors, texture, and flow. Acrylic paint.</p>
-            <a class="visit-link" href="Blue.jpeg" target="_blank" rel="noopener">View →</a>
-          </div>
-        </article>
+<!-- =========================
+     PROJECTS
+========================= -->
 
-        <article class="card">
-          <img src="FacelessCharcoal.jpg" alt="Charcoal" />
-          <div class="card-body">
-            <h3>Woman</h3>
-            <p>Charcoal sketch of a faceless woman.</p>
-            <a class="visit-link" href="FacelessCharcoal.jpg" target="_blank" rel="noopener">View →</a>
-          </div>
-        </article>
+<section
+  id="projects"
+  class="route"
+  data-route="/projects"
+>
 
-        <article class="card">
-          <img src="Sister.jpg" alt="Bronwyn" />
-          <div class="card-body">
-            <h3>Bronwyn</h3>
-            <p>Abstract piece inspired by my sister’s colors. Acrylic paint.</p>
-            <a class="visit-link" href="Sister.jpg" target="_blank" rel="noopener">View →</a>
-          </div>
-        </article>
 
-        <article class="card">
-          <img src="Legs.jpg" alt="Legs" />
-          <div class="card-body">
-            <h3>Long Stretch</h3>
-            <p>Captures the feel of walking in a dark hallway at night—subject, positioning, lighting. Acrylic paint.</p>
-            <a class="visit-link" href="Legs.jpg" target="_blank" rel="noopener">View →</a>
-          </div>
-        </article>
+  <div class="page-heading">
 
-        <article class="card">
-          <img src="Midnight.jpg" alt="Midnight" />
-          <div class="card-body">
-            <h3>Midnight</h3>
-            <p>Light-play study. Acrylic paint.</p>
-            <a class="visit-link" href="Midnight.jpg" target="_blank" rel="noopener">View →</a>
-          </div>
-        </article>
+    <span class="eyebrow">
+      SELECTED PROJECTS
+    </span>
 
-        <article class="card">
-          <img src="CharcoalxWatercolor.jpg" alt="Tip" />
-          <div class="card-body">
-            <h3>Tip</h3>
-            <p>Emotion at a tipping point—colors for different stresses; black shell absorbing surroundings. Charcoal + acrylic.</p>
-            <a class="visit-link" href="CharcoalxWatercolor.jpg" target="_blank" rel="noopener">View →</a>
-            </div>
-        </article>
+    <h1>
+      WORK
+    </h1>
 
-        <article class="card">
-          <img src="The Dance.jpeg" alt="The Dance" />
-          <div class="card-body">
-            <h3>The Dance</h3>
-            <p>Captures our love for music and the energy of sound. Oil paint.</p>
-            <a class="visit-link" href="The Dance.jpeg" target="_blank" rel="noopener">View →</a>
-          </div>
-        </article>
+    <p>
+      A collection of things I've designed,
+      built, photographed, coded, and developed.
+    </p>
 
-        <article class="card">
-          <img src="Absorb.jpeg" alt="Absorb" />
-          <div class="card-body">
-            <h3>Absorb</h3>
-            <p>Mini canvas exercise. Felt-tip pen + watercolor.</p>
-            <a class="visit-link" href="Absorb.jpeg" target="_blank" rel="noopener">View →</a>
-          </div>
-        </article>
+  </div>
 
-        <article class="card">
-          <img src="Man.jpeg" alt="Man" />
-          <div class="card-body">
-            <h3>Man</h3>
-            <p>Exploring shapes and significant colors. Charcoal + acrylic.</p>
-            <a class="visit-link" href="Man.jpeg" target="_blank" rel="noopener">View →</a>
-          </div>
-        </article>
+
+
+  <div class="work-list">
+
+
+    <!-- 01 ACCOUNTAVAPE -->
+
+    <article class="work-item reveal">
+
+      <div class="work-meta">
+
+        <span>01</span>
+
+        <span>
+          PRODUCT / TECHNOLOGY
+        </span>
+
       </div>
-    </section>
 
-    <!-- Contact -->
-    <section id="contact" class="route" data-route="/contact" aria-labelledby="contact-title">
-      <h2 id="contact-title">Contact</h2>
-      <p class="section-intro">I’m open to part-time roles, internships, and collaborations.</p>
 
-      <div class="contact-wrap">
-        <div class="contact-grid">
-          <div class="contact-card">
-            <h3>Email</h3>
-            <p><a href="mailto:caitlinowengreen@gmail.com">caitlinowengreen@gmail.com</a></p>
-            <button class="btn small" data-copy="caitlinowengreen@gmail.com">Copy</button>
+      <div class="work-layout">
+
+
+        <a
+          class="work-image"
+          href="https://sites.google.com/colorado.edu/little-einsteins/home"
+          target="_blank"
+          rel="noopener"
+        >
+
+          <img
+            src="AccountavapeLogo.png"
+            alt="Accountavape project"
+          />
+
+          <span class="image-hover">
+            VIEW PROJECT ↗
+          </span>
+
+        </a>
+
+
+        <div class="work-info">
+
+          <h2>
+            Accountavape
+          </h2>
+
+          <p>
+            Created alongside my Engineering Projects group,
+            The Little Einsteins. ACCOUNTAVAPE allows users
+            to pair their own vape devices with our system
+            to automatically count puffs.
+          </p>
+
+          <div class="project-skills">
+            Arduino / Bluetooth / Product Design /
+            App Development / OnShape
           </div>
 
-          <div class="contact-card">
-            <h3>Phone</h3>
-            <p><a href="tel:+19143125074">+1 (914) 312-5074</a></p>
-            <button class="btn small" data-copy="+19143125074">Copy</button>
-          </div>
+          <a
+            class="text-link"
+            href="https://sites.google.com/colorado.edu/little-einsteins/home"
+            target="_blank"
+            rel="noopener"
+          >
+            View project ↗
+          </a>
 
-          <div class="contact-card">
-            <h3>LinkedIn</h3>
-            <p><a href="https://www.linkedin.com/in/caitlin-owen-997a8428a" target="_blank" rel="noopener">linkedin.com/in/caitlin-owen-997a8428a</a></p>
-            <button class="btn small" data-copy="https://www.linkedin.com/in/caitlin-owen-997a8428a">Copy</button>
-          </div>
-
-          <div class="contact-card">
-            <h3>GitHub</h3>
-            <p><a href="https://github.com/caitlinowen26/caitlinowen26.github.io" target="_blank" rel="noopener">github.com/caitlinowen26/caitlinowen26.github.io</a></p>
-            <button class="btn small" data-copy="https://github.com/caitlinowen26/caitlinowen26.github.io">Copy</button>
-          </div>
         </div>
 
-        <form class="contact-form" action="https://formspree.io/f/your-id" method="POST">
-          <label>
-            Name
-            <input name="name" type="text" required />
-          </label>
-          <label>
-            Email
-            <input name="email" type="email" required />
-          </label>
-          <label>
-            Message
-            <textarea name="message" rows="5" required></textarea>
-          </label>
-          <button class="btn primary" type="submit">Send</button>
-        </form>
+
       </div>
-    </section>
-  </main>
 
-  <footer class="site-footer">
-    <small>© <span id="year"></span> Caitlin Owen • Built with HTML/CSS/JS</small>
-  </footer>
+    </article>
 
-  <script src="Portfolio.js"></script>
+
+
+
+    <!-- 02 GIRLHOOD DESERT -->
+
+    <article class="work-item reverse reveal">
+
+      <div class="work-meta">
+
+        <span>02</span>
+
+        <span>
+          PHOTOGRAPHY
+        </span>
+
+      </div>
+
+
+      <div class="work-layout">
+
+
+        <a
+          class="work-image"
+          href="Project 1 Photobook.pdf"
+          target="_blank"
+          rel="noopener"
+        >
+
+          <img
+            src="Anna.png"
+            alt="Girlhood Desert photography project"
+          />
+
+          <span class="image-hover">
+            VIEW PHOTOBOOK ↗
+          </span>
+
+        </a>
+
+
+        <div class="work-info">
+
+          <h2>
+            Girlhood Desert
+          </h2>
+
+          <p>
+            My first photography project. Focused on
+            composition, color, visual storytelling,
+            Lightroom, and Photoshop.
+          </p>
+
+          <div class="project-skills">
+            Photography / Lightroom / Photoshop
+          </div>
+
+          <a
+            class="text-link"
+            href="Project 1 Photobook.pdf"
+            target="_blank"
+            rel="noopener"
+          >
+            View photobook ↗
+          </a>
+
+        </div>
+
+
+      </div>
+
+    </article>
+
+
+
+
+    <!-- 03 HAND-MADE STOOL -->
+
+    <article class="work-item reveal">
+
+      <div class="work-meta">
+
+        <span>03</span>
+
+        <span>
+          FORM / FABRICATION
+        </span>
+
+      </div>
+
+
+      <div class="work-layout">
+
+
+        <a
+          class="work-image"
+          href="Asg 2_ 2x2 Furniture (1).pdf"
+          target="_blank"
+          rel="noopener"
+        >
+
+          <img
+            src="2x2 Stool.png"
+            alt="Hand-made stool project"
+          />
+
+          <span class="image-hover">
+            VIEW PROJECT ↗
+          </span>
+
+        </a>
+
+
+        <div class="work-info">
+
+          <h2>
+            Hand-made Stool
+          </h2>
+
+          <p>
+            Designed in SketchUp and physically constructed
+            from 2x2 pine lumber using deck screws and a
+            dovetail lap joint.
+          </p>
+
+          <div class="project-skills">
+            SketchUp / Woodshop / Form / Fabrication
+          </div>
+
+          <a
+            class="text-link"
+            href="Asg 2_ 2x2 Furniture (1).pdf"
+            target="_blank"
+            rel="noopener"
+          >
+            View project ↗
+          </a>
+
+        </div>
+
+
+      </div>
+
+    </article>
+
+
+
+
+    <!-- 04 POKER APP -->
+
+    <article class="work-item reverse reveal">
+
+      <div class="work-meta">
+
+        <span>04</span>
+
+        <span>
+          APP DEVELOPMENT
+        </span>
+
+      </div>
+
+
+      <div class="work-layout">
+
+
+        <a
+          class="work-image"
+          href="CF2 Final Project Deliverable.pdf"
+          target="_blank"
+          rel="noopener"
+        >
+
+          <img
+            src="Screenshot 2026-09-01 at 12.33.08 PM.png"
+            alt="Poker Equity App"
+          />
+
+          <span class="image-hover">
+            VIEW PROJECT ↗
+          </span>
+
+        </a>
+
+
+        <div class="work-info">
+
+          <h2>
+            Poker App
+          </h2>
+
+          <p>
+            Used Swift to create an iOS application
+            focused on computing equity in poker.
+          </p>
+
+          <div class="project-skills">
+            Swift / iOS / App Development
+          </div>
+
+          <a
+            class="text-link"
+            href="CF2 Final Project Deliverable.pdf"
+            target="_blank"
+            rel="noopener"
+          >
+            View project ↗
+          </a>
+
+        </div>
+
+
+      </div>
+
+    </article>
+
+
+
+
+    <!-- 05 TEA BOX -->
+
+    <article class="work-item reveal">
+
+      <div class="work-meta">
+
+        <span>05</span>
+
+        <span>
+          PRODUCT DESIGN
+        </span>
+
+      </div>
+
+
+      <div class="work-layout">
+
+
+        <div class="work-image placeholder-large">
+
+          <img
+            src="TeaBox.png"
+            alt="Teabox"
+          />
+
+        </div>
+
+
+        <div class="work-info">
+
+          <h2>
+            Tea Box
+          </h2>
+
+          <p>
+            Project currently being added.
+          </p>
+
+          <div class="project-skills">
+            Product Design / In Progress
+          </div>
+
+        </div>
+
+
+      </div>
+
+    </article>
+
+
+
+
+    <!-- 06 CAPSTONE -->
+
+    <article class="work-item reverse reveal">
+
+      <div class="work-meta">
+
+        <span>06</span>
+
+        <span>
+          SENIOR CAPSTONE
+        </span>
+
+      </div>
+
+
+      <div class="work-layout">
+
+
+        <div class="work-image placeholder-large">
+
+          <span>
+            CAPSTONE<br>
+            IN DEVELOPMENT
+          </span>
+
+        </div>
+
+
+        <div class="work-info">
+
+          <h2>
+            Capstone
+          </h2>
+
+          <p>
+            Currently in development.
+          </p>
+
+          <div class="project-skills">
+            Current Project / 2026
+          </div>
+
+        </div>
+
+
+      </div>
+
+    </article>
+
+
+
+
+    <!-- 07 VIBE CODING -->
+
+    <article class="work-item reveal">
+
+      <div class="work-meta">
+
+        <span>07</span>
+
+        <span>
+          CREATIVE TECHNOLOGY
+        </span>
+
+      </div>
+
+
+      <div class="work-layout">
+
+
+        <div class="work-image placeholder-large">
+
+          <span>
+            VIBE CODING<br>
+            IN DEVELOPMENT
+          </span>
+
+        </div>
+
+
+        <div class="work-info">
+
+          <h2>
+            Vibe Coding Project
+          </h2>
+
+          <p>
+            Currently in development.
+          </p>
+
+          <div class="project-skills">
+            Coding / Experimentation / In Progress
+          </div>
+
+        </div>
+
+
+      </div>
+
+    </article>
+
+
+
+
+    <!-- 08 PRODUCT DEVELOPMENT -->
+
+    <article class="work-item reverse reveal">
+
+      <div class="work-meta">
+
+        <span>08</span>
+
+        <span>
+          PRODUCT DEVELOPMENT
+        </span>
+
+      </div>
+
+
+      <div class="work-layout">
+
+
+        <div class="work-image placeholder-large">
+
+          <span>
+            PRODUCT DEVELOPMENT<br>
+            IN PROGRESS
+          </span>
+
+        </div>
+
+
+        <div class="work-info">
+
+          <h2>
+            Product Development Project
+          </h2>
+
+          <p>
+            Currently in development.
+          </p>
+
+          <div class="project-skills">
+            Product Development / In Progress
+          </div>
+
+        </div>
+
+
+      </div>
+
+    </article>
+
+
+  </div>
+
+</section>
+
+
+
+
+
+<!-- =========================
+     ART
+========================= -->
+
+<section
+  id="art"
+  class="route"
+  data-route="/art"
+>
+
+
+  <div class="page-heading">
+
+    <span class="eyebrow">
+      PERSONAL WORK
+    </span>
+
+    <h1>
+      ART
+    </h1>
+
+    <p>
+      Drawing, painting, experimentation,
+      color, texture, and observation.
+    </p>
+
+  </div>
+
+
+
+  <div class="art-grid">
+
+
+    <a
+      class="art-piece art-large reveal"
+      href="MumPastels.jpeg"
+      target="_blank"
+    >
+
+      <img
+        src="MumPastels.jpeg"
+        alt="Mum"
+      />
+
+      <div class="art-caption">
+        <span>Mum</span>
+        <span>Oil Pastel</span>
+      </div>
+
+    </a>
+
+
+
+    <a
+      class="art-piece reveal"
+      href="Flush.jpg"
+      target="_blank"
+    >
+
+      <img src="Flush.jpg" alt="Flushed" />
+
+      <div class="art-caption">
+        <span>Flushed</span>
+        <span>Acrylic</span>
+      </div>
+
+    </a>
+
+
+
+    <a
+      class="art-piece reveal"
+      href="Blue.jpeg"
+      target="_blank"
+    >
+
+      <img src="Blue.jpeg" alt="Blush" />
+
+      <div class="art-caption">
+        <span>Blush</span>
+        <span>Acrylic</span>
+      </div>
+
+    </a>
+
+
+
+    <a
+      class="art-piece reveal"
+      href="FacelessCharcoal.jpg"
+      target="_blank"
+    >
+
+      <img
+        src="FacelessCharcoal.jpg"
+        alt="Woman"
+      />
+
+      <div class="art-caption">
+        <span>Woman</span>
+        <span>Charcoal</span>
+      </div>
+
+    </a>
+
+
+
+    <a
+      class="art-piece art-large reveal"
+      href="Sister.jpg"
+      target="_blank"
+    >
+
+      <img src="Sister.jpg" alt="Bronwyn" />
+
+      <div class="art-caption">
+        <span>Bronwyn</span>
+        <span>Acrylic</span>
+      </div>
+
+    </a>
+
+
+
+    <a
+      class="art-piece reveal"
+      href="Legs.jpg"
+      target="_blank"
+    >
+
+      <img src="Legs.jpg" alt="Long Stretch" />
+
+      <div class="art-caption">
+        <span>Long Stretch</span>
+        <span>Acrylic</span>
+      </div>
+
+    </a>
+
+
+
+    <a
+      class="art-piece reveal"
+      href="Midnight.jpg"
+      target="_blank"
+    >
+
+      <img src="Midnight.jpg" alt="Midnight" />
+
+      <div class="art-caption">
+        <span>Midnight</span>
+        <span>Acrylic</span>
+      </div>
+
+    </a>
+
+
+
+    <a
+      class="art-piece reveal"
+      href="CharcoalxWatercolor.jpg"
+      target="_blank"
+    >
+
+      <img
+        src="CharcoalxWatercolor.jpg"
+        alt="Tip"
+      />
+
+      <div class="art-caption">
+        <span>Tip</span>
+        <span>Mixed Media</span>
+      </div>
+
+    </a>
+
+
+
+    <a
+      class="art-piece art-large reveal"
+      href="The Dance.jpeg"
+      target="_blank"
+    >
+
+      <img
+        src="The Dance.jpeg"
+        alt="The Dance"
+      />
+
+      <div class="art-caption">
+        <span>The Dance</span>
+        <span>Oil Paint</span>
+      </div>
+
+    </a>
+
+
+
+    <a
+      class="art-piece reveal"
+      href="Absorb.jpeg"
+      target="_blank"
+    >
+
+      <img src="Absorb.jpeg" alt="Absorb" />
+
+      <div class="art-caption">
+        <span>Absorb</span>
+        <span>Watercolor</span>
+      </div>
+
+    </a>
+
+
+
+    <a
+      class="art-piece reveal"
+      href="Man.jpeg"
+      target="_blank"
+    >
+
+      <img src="Man.jpeg" alt="Man" />
+
+      <div class="art-caption">
+        <span>Man</span>
+        <span>Charcoal + Acrylic</span>
+      </div>
+
+    </a>
+
+
+  </div>
+
+</section>
+
+
+
+
+<!-- =========================
+     CONTACT
+========================= -->
+
+<section
+  id="contact"
+  class="route"
+  data-route="/contact"
+>
+
+
+  <div class="contact-page">
+
+
+    <span class="eyebrow reveal">
+      LET'S CONNECT
+    </span>
+
+
+    <h1 class="contact-title reveal">
+      HAVE AN IDEA?
+      <br>
+      LET'S TALK.
+    </h1>
+
+
+    <div class="contact-bottom">
+
+
+      <div class="contact-statement reveal">
+
+        <p>
+          I'm interested in creative collaborations,
+          internships, design opportunities, and projects
+          that combine technology with meaningful ideas.
+        </p>
+
+      </div>
+
+
+      <div class="contact-links reveal">
+
+        <a
+          href="mailto:caitlinowengreen@gmail.com"
+        >
+          EMAIL ↗
+        </a>
+
+        <a
+          href="https://www.linkedin.com/in/caitlin-owen-997a8428a"
+          target="_blank"
+        >
+          LINKEDIN ↗
+        </a>
+
+        <a
+          href="https://github.com/caitlinowen26/caitlinowen26.github.io"
+          target="_blank"
+        >
+          GITHUB ↗
+        </a>
+
+        <a
+          href="Caitlin Owen Resume (8).pdf"
+          target="_blank"
+        >
+          RESUME ↗
+        </a>
+
+      </div>
+
+
+    </div>
+
+
+    <div class="contact-email reveal">
+      CAITLINOWENGREEN@GMAIL.COM
+    </div>
+
+
+  </div>
+
+</section>
+
+
+</main>
+
+
+
+
+<footer class="site-footer">
+
+  <span>
+    © <span id="year"></span> CAITLIN OWEN
+  </span>
+
+  <span>
+    DESIGNED + BUILT BY CAITLIN
+  </span>
+
+</footer>
+
+
+
+<script src="Portfolio.js"></script>
+
 </body>
 </html>
