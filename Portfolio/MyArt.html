@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <title>My Art | Caitlin Owen</title>
+
+  <style>
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background: #080808;
+      color: #f5f5f5;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+
+    /* HEADER */
+
+    header {
+      height: 90px;
+
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      padding: 0 3%;
+
+      border-bottom: 1px solid #252525;
+    }
+
+    .name {
+      font-size: 14px;
+      font-weight: 700;
+      letter-spacing: 1px;
+    }
+
+    .back {
+      color: #aaa;
+      text-decoration: none;
+
+      font-size: 14px;
+
+      transition: color 0.3s ease;
+    }
+
+    .back:hover {
+      color: white;
+    }
+
+
+    /* INTRO */
+
+    .intro {
+      padding: 100px 5% 80px;
+    }
+
+    .intro-small {
+      color: #888;
+
+      font-size: 12px;
+      letter-spacing: 2px;
+
+      margin-bottom: 20px;
+    }
+
+    .intro h1 {
+      font-size: clamp(70px, 11vw, 170px);
+
+      line-height: 0.85;
+      letter-spacing: -0.07em;
+
+      margin-bottom: 45px;
+    }
+
+    .intro p {
+      color: #aaa;
+
+      max-width: 550px;
+
+      font-size: 17px;
+      line-height: 1.6;
+    }
+
+
+    /* GALLERY */
+
+    .gallery {
+      padding: 0 5% 100px;
+
+      display: grid;
+
+      grid-template-columns:
+        repeat(2, minmax(0, 1fr));
+
+      gap: 70px 30px;
+    }
+
+    .art-piece {
+      width: 100%;
+    }
+
+    .art-piece img {
+      display: block;
+
+      width: 100%;
+      height: auto;
+
+      max-height: 850px;
+
+      object-fit: contain;
+
+      background: #111;
+
+      transition:
+        transform 0.5s ease,
+        opacity 0.5s ease;
+    }
+
+    .art-piece:hover img {
+      transform: scale(0.985);
+      opacity: 0.9;
+    }
+
+    .art-info {
+      display: flex;
+      justify-content: space-between;
+
+      gap: 20px;
+
+      padding-top: 15px;
+
+      border-top: 1px solid #333;
+
+      margin-top: 12px;
+    }
+
+    .art-info h2 {
+      font-size: 16px;
+      font-weight: 500;
+    }
+
+    .art-info span {
+      color: #777;
+
+      font-size: 11px;
+
+      letter-spacing: 1px;
+
+      text-align: right;
+    }
+
+
+    /* LARGE FEATURED ART */
+
+    .art-piece.large {
+      grid-column: 1 / -1;
+    }
+
+    .art-piece.large img {
+      width: 100%;
+      max-height: 1000px;
+    }
+
+
+    /* FOOTER */
+
+    footer {
+      border-top: 1px solid #252525;
+
+      padding: 40px 5%;
+
+      display: flex;
+      justify-content: space-between;
+
+      color: #777;
+
+      font-size: 12px;
+    }
+
+
+    /* MOBILE */
+
+    @media (max-width: 750px) {
+
+      header {
+        height: 70px;
+        padding: 0 5%;
+      }
+
+      .intro {
+        padding-top: 70px;
+      }
+
+      .gallery {
+        grid-template-columns: 1fr;
+      }
+
+      .art-piece.large {
+        grid-column: auto;
+      }
+
+    }
+
+  </style>
+
+</head>
+
+
+<body>
+
+
+<header>
+
+  <div class="name">
+    CAITLIN OWEN
+  </div>
+
+  <a
+    class="back"
+    href="Portfolio.html#/projects"
+  >
+    ← BACK TO WORK
+  </a>
+
+</header>
+
+
+
+<main>
+
+
+  <section class="intro">
+
+    <div class="intro-small">
+      PERSONAL WORK / ART
+    </div>
+
+    <h1>
+      MY ART
+    </h1>
+
+    <p>
+      A collection of drawings, paintings, and mixed-media
+      work created across different mediums, styles, and
+      stages of my creative practice.
+    </p>
+
+  </section>
+
+
+
+  <section class="gallery">
+
+
+    <!-- ART 1 -->
+
+    <article class="art-piece large">
+
+      <img
+        src="MumPastels.jpeg"
+        alt="Portrait artwork"
+      >
+
+      <div class="art-info">
+
+        <h2>Mum</h2>
+
+        <span>OIL PASTEL</span>
+
+      </div>
+
+    </article>
+
+
+
+    <!-- ART 2 -->
+
+    <article class="art-piece">
+
+      <img
+        src="Flush.jpg"
+        alt="Abstract painting"
+      >
+
+      <div class="art-info">
+
+        <h2>Flushed</h2>
+
+        <span>PAINTING</span>
+
+      </div>
+
+    </article>
+
+
+
+    <!-- ART 3 -->
+
+    <article class="art-piece">
+
+      <img
+        src="CharcoalxWatercolor.jpg"
+        alt="Charcoal and watercolor artwork"
+      >
+
+      <div class="art-info">
+
+        <h2>Charcoal + Watercolor</h2>
+
+        <span>MIXED MEDIA</span>
+
+      </div>
+
+    </article>
+
+
+
+    <!-- ART 4 -->
+
+    <article class="art-piece">
+
+      <img
+        src="FacelessCharcoal.jpg"
+        alt="Charcoal drawing"
+      >
+
+      <div class="art-info">
+
+        <h2>Faceless</h2>
+
+        <span>CHARCOAL</span>
+
+      </div>
+
+    </article>
+
+
+
+    <!-- ART 5 -->
+
+    <article class="art-piece">
+
+      <img
+        src="Legs.jpg"
+        alt="Artwork"
+      >
+
+      <div class="art-info">
+
+        <h2>Legs</h2>
+
+        <span>DRAWING</span>
+
+      </div>
+
+    </article>
+
+
+
+    <!-- ART 6 -->
+
+    <article class="art-piece large">
+
+      <img
+        src="The Dance.jpeg"
+        alt="The Dance artwork"
+      >
+
+      <div class="art-info">
+
+        <h2>The Dance</h2>
+
+        <span>PAINTING</span>
+
+      </div>
+
+    </article>
+
+
+
+    <!-- ART 7 -->
+
+    <article class="art-piece">
+
+      <img
+        src="Absorb.jpeg"
+        alt="Absorb artwork"
+      >
+
+      <div class="art-info">
+
+        <h2>Absorb</h2>
+
+        <span>MIXED MEDIA</span>
+
+      </div>
+
+    </article>
+
+
+
+    <!-- ART 8 -->
+
+    <article class="art-piece">
+
+      <img
+        src="Man.jpeg"
+        alt="Man artwork"
+      >
+
+      <div class="art-info">
+
+        <h2>Man</h2>
+
+        <span>DRAWING</span>
+
+      </div>
+
+    </article>
+
+
+  </section>
+
+
+</main>
+
+
+
+<footer>
+
+  <span>CAITLIN OWEN</span>
+
+  <span>CREATIVE TECHNOLOGY + DESIGN</span>
+
+</footer>
+
+
+</body>
+
+</html>
