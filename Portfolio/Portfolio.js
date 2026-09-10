@@ -10,9 +10,6 @@ const routes = {
   '/projects':
     document.getElementById('projects'),
 
-  '/art':
-    document.getElementById('art'),
-
   '/contact':
     document.getElementById('contact')
 
