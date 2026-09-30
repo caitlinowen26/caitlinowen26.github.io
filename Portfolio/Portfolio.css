@@ -1949,3 +1949,52 @@ body {
   width: 100%;
   max-width: 100%;
 }
+
+/* PHOTOGRAPHY PROJECT PLACEHOLDERS */
+
+.photography-placeholder {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+
+  background:
+    radial-gradient(
+      circle at 25% 30%,
+      rgba(18, 61, 64, 0.45),
+      transparent 45%
+    ),
+    radial-gradient(
+      circle at 75% 70%,
+      rgba(82, 30, 43, 0.4),
+      transparent 45%
+    ),
+    #090b0c !important;
+}
+
+.coming-soon {
+  text-align: center;
+  font-family: Georgia, "Times New Roman", serif;
+}
+
+.coming-soon span {
+  display: block;
+  color: #b47e82;
+  font-size: 11px;
+  letter-spacing: 4px;
+  margin-bottom: 15px;
+}
+
+.coming-soon p {
+  color: #e8ddbb;
+  font-size: 28px;
+  letter-spacing: 2px;
+  margin: 0;
+}
+
+.coming-soon::after {
+  content: "❦";
+  display: block;
+  color: #793548;
+  font-size: 22px;
+  margin-top: 20px;
+}
