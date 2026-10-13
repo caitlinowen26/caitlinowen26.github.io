@@ -406,9 +406,85 @@ window.addEventListener(
 
     heroMovement();
 
-    projectParallax();
+    // Removed scroll parallax so images stay stable and hover motion remains smooth.
 
     navigate();
 
   }
 );
+
+// STUDIO EDITION: meaningful interactions, not decorative scroll effects.
+(function(){
+  const motionOK=!window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const filters=document.querySelectorAll('.filter-btn');
+  const cards=[...document.querySelectorAll('#projects .work-item')];
+  const progressHeading=document.querySelector('#projects .development-heading');
+  filters.forEach(btn=>btn.addEventListener('click',()=>{
+    filters.forEach(b=>{b.classList.toggle('is-selected',b===btn);b.setAttribute('aria-pressed',String(b===btn));});
+    const filter=btn.dataset.filter;
+    cards.forEach(card=>{card.hidden=filter!=='all'&&card.dataset.category!==filter;});
+    if(progressHeading) progressHeading.hidden=filter!=='all'&&filter!=='progress';
+    // Existing reveal animations should not hide newly filtered cards.
+    cards.forEach(card=>{if(!card.hidden) card.classList.add('visible');});
+  }));
+  document.querySelectorAll('.project-open').forEach(btn=>btn.addEventListener('click',()=>{
+    const panel=btn.nextElementSibling;
+    const expanding=panel.hidden;
+    panel.hidden=!expanding;
+    btn.setAttribute('aria-expanded',String(expanding));
+    btn.textContent=expanding?'CLOSE NOTES −':'PROJECT NOTES +';
+  }));
+  const bar=document.querySelector('.scroll-progress');
+  let ticking=false;
+  window.addEventListener('scroll',()=>{
+    if(ticking)return;ticking=true;
+    requestAnimationFrame(()=>{const max=document.documentElement.scrollHeight-innerHeight;bar.style.width=(max>0?100*scrollY/max:0)+'%';ticking=false;});
+  },{passive:true});
+  const orb=document.querySelector('.cursor-orb');
+  if(motionOK&&matchMedia('(hover:hover) and (pointer:fine)').matches){
+    document.addEventListener('pointermove',e=>{orb.style.left=e.clientX+'px';orb.style.top=e.clientY+'px';orb.style.opacity='1';},{passive:true});
+    document.querySelectorAll('a,button,.work-image').forEach(el=>{
+      el.addEventListener('pointerenter',()=>orb.classList.add('is-hovering'));
+      el.addEventListener('pointerleave',()=>orb.classList.remove('is-hovering'));
+    });
+    const portrait=document.querySelector('.studio-portrait');
+    if(portrait){portrait.addEventListener('pointermove',e=>{const r=portrait.getBoundingClientRect();const x=(e.clientX-r.left)/r.width-.5;const y=(e.clientY-r.top)/r.height-.5;portrait.querySelector('img').style.transform=`scale(1.08) translate(${x*-15}px,${y*-15}px)`;});portrait.addEventListener('pointerleave',()=>portrait.querySelector('img').style.transform='scale(1.04)');}
+  }
+})();
+
+// Horizontal project reel: buttons, filters, keyboard, and directional slide-ins.
+(function(){
+  const track=document.querySelector('#projects .work-list');
+  if(!track)return;
+  const prev=document.querySelector('.gallery-prev');
+  const next=document.querySelector('.gallery-next');
+  const counter=document.querySelector('.gallery-count');
+  const reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+  let previousIndex=0;
+  const items=()=>[...track.querySelectorAll('.work-item:not([hidden])')];
+  const currentIndex=()=>{
+    const visible=items();
+    if(!visible.length)return 0;
+    let index=0,smallest=Infinity;
+    visible.forEach((el,i)=>{const delta=Math.abs(el.offsetLeft-track.offsetLeft-track.scrollLeft);if(delta<smallest){smallest=delta;index=i;}});
+    return index;
+  };
+  const update=()=>{
+    const all=items(),index=currentIndex();
+    counter.textContent=String(index+1).padStart(2,'0')+' / '+String(all.length).padStart(2,'0');
+    prev.disabled=index===0;next.disabled=index>=all.length-1;
+    if(index!==previousIndex&&!reduce){
+      const card=all[index];if(card){card.classList.remove('reel-enter-left','reel-enter-right');void card.offsetWidth;card.classList.add(index>previousIndex?'reel-enter-right':'reel-enter-left');}
+    }
+    previousIndex=index;
+  };
+  const go=(delta)=>{
+    const all=items();const i=Math.max(0,Math.min(all.length-1,currentIndex()+delta));
+    if(all[i])track.scrollTo({left:all[i].offsetLeft-track.offsetLeft,behavior:reduce?'instant':'smooth'});
+  };
+  prev.addEventListener('click',()=>go(-1));next.addEventListener('click',()=>go(1));
+  track.addEventListener('keydown',e=>{if(e.key==='ArrowRight'||e.key==='ArrowLeft'){e.preventDefault();go(e.key==='ArrowRight'?1:-1);}});
+  let raf=false;track.addEventListener('scroll',()=>{if(!raf){raf=true;requestAnimationFrame(()=>{update();raf=false;});}},{passive:true});
+  document.querySelectorAll('#projects .filter-btn').forEach(b=>b.addEventListener('click',()=>{track.scrollLeft=0;previousIndex=0;requestAnimationFrame(update);}));
+  update();
+})();
