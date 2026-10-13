@@ -1,0 +1,37 @@
+# macOS system files
+.DS_Store
+
+# Environment variables and secrets
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.p12
+*.pfx
+credentials.json
+secrets.json
+service-account*.json
+
+# Dependencies
+node_modules/
+
+# VS Code settings
+.vscode/
+
+# Archived class projects
+WebDev*/
+CSSProject/
+JSProject/
+InClass13/
+Week13ReadingQuiz/
+ica/
+ica3-part2/
+
+# Other archived files
+CowboysVsAliens.pdf
+
+# Archived assignments and assets
+img/
+js/
+wa/
